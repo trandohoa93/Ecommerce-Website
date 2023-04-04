@@ -4,11 +4,27 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Button() {
+interface Button {
+  text: string;
+  onClick?: () => void;
+  variant: 'secondary' | 'white';
+  disabled?: boolean;
+  className?: string;
+  icon?: string;
+}
+
+function Button(props: Button) {
+  const { text, onClick, variant } = props;
+
+  const className = cx({
+    wrapper: true,
+    variant,
+  });
+
   return (
-    <div className={cx('wrapper')}>
-      <p>Button</p>
-    </div>
+    <button className={cx(className)} onClick={onClick}>
+      <p>{text}</p>
+    </button>
   );
 }
 

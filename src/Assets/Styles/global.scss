@@ -29,7 +29,7 @@ html {
     font-size: 62.5%;
 }
 
-body{
+body {
     font-family: 'Poppins';
     font-size: 1.6rem;
     line-height: 1.5;
@@ -41,6 +41,7 @@ button, input, [tabindex] {
     background-color: transparent;
     outline: none;
     border: none;
+    line-height: unset;
 }
 
 
