@@ -1,0 +1,41 @@
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.image-container {
+    background: var(--secondary);
+    border-radius: 4px;
+    padding: 35px 40px;
+    img {
+        margin-left: 38px;
+        margin-right: 38px;
+    }
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .title {
+        font-weight: 500;
+    }
+    
+    .des {
+        display: flex;
+        gap: 8px;
+
+        .price {
+            font-weight: 500;
+            color: var(--secondary2);
+        }
+
+        .amount {
+            font-size: 1.4rem;
+            font-weight: 600;
+            opacity: 0.5;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.inner {
+    display: flex;
+    padding-top: 40px;
+}
+
+.category {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 16px;
+
+    &-item {
+        font-weight: 400;
+    }
+
+    &:after {
+        position: absolute;
+        top: -40px;
+        right: 0px;
+        width: 0.5px;
+        height: 384px;
+        opacity: 0.3;
+        background-color: var(--text2);
+
+        content: "";
+    }
+}
+
+.slide {
+    padding-left: 45px;
+    width: 892px;
+    height: 344px;
+}
+

@@ -1,0 +1,25 @@
+.inner {
+    display: flex;
+    align-items: center;
+    gap: 129px;
+
+    padding-top: 60px;
+}
+
+.side-images {
+    border-radius: 0px 4px 4px 0px;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .title {
+        font-weight: 500;
+        font-size: 2.25rem;
+        line-height: 0.83;
+
+        letter-spacing: 0.04em;
+    }
+}

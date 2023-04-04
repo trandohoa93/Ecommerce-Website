@@ -1,5 +1,3 @@
-function SignUp() {
-  return <div>Sign Up</div>;
-}
+import SignUp from './SignUp';
 
 export default SignUp;

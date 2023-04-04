@@ -1,5 +1,3 @@
-function Home() {
-  return <div>Home</div>;
-}
+import Home from './HomePage';
 
 export default Home;

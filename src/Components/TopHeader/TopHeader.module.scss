@@ -1,0 +1,50 @@
+.wrapper {
+    height: 48px;
+    position: absolute;
+    background-color: var(--button);
+    width: 100%;
+    padding: 1.2rem 13.6rem 1.2rem 44.5rem;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    font-size: 1.4rem;
+
+    .text {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        margin-right: 23.1rem;
+
+        .text-1 {
+            color: var(--text3);
+            margin-right: 0.9rem;
+            font-weight: 400;
+        }
+        .text-2 {
+            text-decoration-line: underline;
+            text-align: center;
+            color: var(--text4);
+            font-weight: 600;
+        }
+    }
+    
+    .dropdown {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 5px;
+
+        p {
+            color: var(--text4);
+            font-weight: 400;
+        }
+    }
+}
