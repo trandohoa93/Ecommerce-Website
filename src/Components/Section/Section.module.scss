@@ -32,4 +32,10 @@
     grid-template-columns: repeat(4, 1fr);
     row-gap: 60px;
     column-gap: 30px;
+    margin-bottom: 60px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
 }

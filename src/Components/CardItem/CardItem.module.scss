@@ -5,12 +5,14 @@
 }
 
 .image-container {
-    background: var(--secondary);
+    background: #a7887908;
     border-radius: 4px;
     padding: 35px 40px;
     img {
-        margin-left: 38px;
-        margin-right: 38px;
+        width: 190px;
+        height: 180px;
+        object-fit: contain;
+        mix-blend-mode: color-burn;
     }
 }
 
@@ -25,17 +27,24 @@
     
     .des {
         display: flex;
+        flex-direction: column;
         gap: 8px;
 
-        .price {
-            font-weight: 500;
-            color: var(--secondary2);
-        }
+        .star {
+            display: flex;
+            gap: 8px;
 
-        .amount {
-            font-size: 1.4rem;
-            font-weight: 600;
-            opacity: 0.5;
+            .price {
+                    font-weight: 500;
+                    color: var(--secondary2);
+                }
+            
+                .amount {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    opacity: 0.5;
+                }
         }
+        
     }
 }

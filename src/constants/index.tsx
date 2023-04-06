@@ -23,3 +23,5 @@ export const NAV_LINK = [
     href: LOCATION.SIGNUP,
   },
 ];
+
+export const BASE_URL = 'https://fakestoreapi.com';
