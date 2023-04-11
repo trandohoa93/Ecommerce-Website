@@ -1,4 +1,5 @@
 import Home from '../Pages/HomePage';
+import ProductDetails from '../Pages/ProductsDetails';
 import SignUp from '../Pages/Sign Up';
 
 const publicRoutes = [
@@ -9,6 +10,10 @@ const publicRoutes = [
   {
     path: '/signup',
     component: SignUp,
+  },
+  {
+    path: '/productdetails/:id',
+    component: ProductDetails,
   },
 ];
 

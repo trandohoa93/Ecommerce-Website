@@ -9,8 +9,10 @@
     flex-direction: column;
     gap: 16px;
     padding-right: 16px;
+    min-width: 200px;
 
     &-item {
+        text-transform: capitalize;
         font-weight: 400;
     }
 

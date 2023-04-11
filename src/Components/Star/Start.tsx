@@ -8,7 +8,7 @@ interface Props {
 
 function Star({ stars }: Props) {
   const starArray = [];
-  for (let i = 0; i <= stars; i++) {
+  for (let i = 0; i < stars; i++) {
     starArray.push(
       <span key={i}>
         {stars >= i + 1 ? (

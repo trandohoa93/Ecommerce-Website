@@ -30,10 +30,11 @@ function Section() {
       </div>
       <div className={cx('item-container')}>
         {(data ?? []).slice(0, 8).map((item, index) => {
-          const { category, price, rating, image } = item;
+          const { id, category, price, rating, image } = item;
           return (
             <CardItem
               key={index}
+              id={id}
               category={category}
               price={price}
               rating={rating}
@@ -43,7 +44,14 @@ function Section() {
         })}
       </div>
       <div className={cx('button')}>
-        <Button text="View All Product" variant="secondary" />
+        <Button
+          color="secondary"
+          onClick={() => {
+            console.log('heheh');
+          }}
+        >
+          View All Product
+        </Button>
       </div>
     </div>
   );

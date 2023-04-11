@@ -3,8 +3,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import classNames from 'classnames/bind';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 
+import { getAllCategories } from '../../Api/projectAPI';
+import { RootState } from '../../App/store';
 import ImageSlide from '../../Assets/Images/Slide.svg';
 import styles from './Slide.module.scss';
 
@@ -30,11 +34,18 @@ const settings = {
 };
 
 function Slide() {
+  const dispatch = useDispatch<any>();
+  const data = useSelector((state: RootState) => state.categories.data);
+
+  useEffect(() => {
+    dispatch(getAllCategories());
+  }, []);
+
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('category')}>
-          {category.map((item) => (
+          {data.map((item) => (
             <div className={cx('category-item')} key={item}>
               {item}
             </div>

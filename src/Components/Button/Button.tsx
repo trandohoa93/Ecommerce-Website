@@ -4,26 +4,28 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface Button {
-  text: string;
-  onClick?: () => void;
-  variant: 'secondary' | 'white';
+interface Props {
+  children?: React.ReactNode;
+  onClick: () => void;
+  color: 'secondary' | 'white';
   disabled?: boolean;
   className?: string;
   icon?: string;
+  padding?: string;
 }
 
-function Button(props: Button) {
-  const { text, onClick, variant } = props;
+function Button(props: Props) {
+  const { children, onClick, color, padding } = props;
 
   const className = cx({
     wrapper: true,
-    variant,
+    [`color-${color}`]: true,
+    [`padding-${padding}`]: true,
   });
 
   return (
     <button className={cx(className)} onClick={onClick}>
-      <p>{text}</p>
+      <p>{children}</p>
     </button>
   );
 }

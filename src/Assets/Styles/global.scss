@@ -49,3 +49,23 @@ a[href] {
     color: var(--text2);
     text-decoration: none;
 }
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+    appearance: none;
+    /* other browsers */
+}
+
+/* ẩn các nút tăng giảm trên Chrome và Safari */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}

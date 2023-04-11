@@ -2,13 +2,30 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { getAllProducts } from '../../Api/projectAPI.js';
 
-const initialState = {
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
+
+const initialState: {
+  loading: boolean;
+  error: string | null;
+  data: Product[];
+} = {
   loading: false,
-  error: null as string | null,
+  error: null,
   data: [],
 };
 
-export const productSlice = createSlice({
+export const getAllProductsSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {},
@@ -31,4 +48,4 @@ export const productSlice = createSlice({
   },
 });
 
-export default productSlice.reducer;
+export default getAllProductsSlice.reducer;

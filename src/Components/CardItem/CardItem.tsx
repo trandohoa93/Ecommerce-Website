@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import styles from './CardItem.module.scss';
 
@@ -6,6 +7,7 @@ const cx = classNames.bind(styles);
 import Star from '../Star';
 
 interface Props {
+  id: number;
   category: string;
   price: number;
   rating: {
@@ -14,10 +16,9 @@ interface Props {
   };
   image: string;
 }
-
-function CardItem({ category, price, rating, image }: Props) {
+function CardItem({ category, price, rating, image, id }: Props) {
   return (
-    <div className={cx('wrapper')}>
+    <Link to={`/productdetails/${id}`}>
       <div className={cx('inner')}>
         <div className={cx('image-container')}>
           <img src={image} alt="Item" />
@@ -35,7 +36,7 @@ function CardItem({ category, price, rating, image }: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

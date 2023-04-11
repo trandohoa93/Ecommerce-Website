@@ -5,13 +5,24 @@
     padding: 16px 48px;
     gap: 10px;
     
-    background-color: var(--secondary2);    
     border-radius: 4px;
-
+    cursor: pointer;
+    
     p {
-        
         color: var(--text4);
     }
+}
+
+.color-secondary {
+    background-color: var(--secondary2);
+}
+
+.color-white {
+    background-color: var(--primary);
+}
+
+.padding-style1 {
+    padding: 10px 48px !important;
 }
 
 

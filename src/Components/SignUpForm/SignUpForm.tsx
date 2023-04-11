@@ -8,17 +8,23 @@ function SignUpForm() {
   return (
     <form>
       <div className={cx('form-title')}>
-        <p className={cx('title')}>Create an account</p>
+        <p className={cx('title')}>Login in to Exclusive</p>
         <p className={cx('des')}>Enter your details below</p>
       </div>
       <div className={cx('form-body')}>
         <div className={cx('form-input')}>
-          <input placeholder="Name" />
-          <input placeholder="Email or PhoneNumber" />
+          <input placeholder="Name or Pone Number" />
           <input placeholder="Password" />
         </div>
         <div className={cx('form-button')}>
-          <Button text="Create Account" variant="secondary" />
+          <Button
+            color="secondary"
+            onClick={() => {
+              console.log('hehe');
+            }}
+          >
+            Login
+          </Button>
         </div>
       </div>
     </form>
