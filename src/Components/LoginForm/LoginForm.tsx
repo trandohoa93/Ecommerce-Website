@@ -1,7 +1,8 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { userLogin } from '../../Api/projectAPI';
 import { RootState } from '../../App/store';
@@ -11,6 +12,7 @@ import styles from './LoginForm.module.scss';
 const cx = classNames.bind(styles);
 
 function LoginForm() {
+  const navigate = useNavigate();
   const dispatch = useDispatch<any>();
   const data = useSelector((state: RootState) => state.userLogin.data);
   const [username, setUsername] = useState<string>('');
@@ -19,6 +21,16 @@ function LoginForm() {
   const submitForm = () => {
     dispatch(userLogin({ username, password }));
     console.log(data);
+    if (data.token) {
+      const expirationTime = new Date().getTime() + 60 * 60 * 1000; // timestamp của thời điểm token hết hạn (1 giờ sau thời điểm hiện tại)
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('expirationTime', expirationTime.toString());
+      setTimeout(() => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('expirationTime');
+      }, 60 * 60 * 1000);
+      navigate('/');
+    }
   };
 
   const setForm = () => {
@@ -34,8 +46,16 @@ function LoginForm() {
       </div>
       <div className={cx('form-body')}>
         <div className={cx('form-input')}>
-          <input placeholder="Name or Pone Number" value={username} />
-          <input placeholder="Password" value={password} />
+          <input
+            placeholder="Name or Pone Number"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
         <div className={cx('form-button')}>
           <Button color="secondary" onClick={() => submitForm()}>

@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Cart from '../../Assets/Images/Cart.svg';
@@ -10,14 +10,16 @@ import Wishlist from '../../Assets/Images/Wishlist.svg';
 import DropdownLogin from '../../Components/DropdownLogin';
 import TopHeader from '../../Components/TopHeader';
 import { NAV_LINK } from '../../constants';
+import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
 function Header() {
-  const [handleDropdown, setHandleDropdown] = useState(false);
+  const [handleDropdown, setHandleDropdown] = useState<boolean>(false);
+  const wrapperRef = useRef(null);
 
-  console.log(handleDropdown);
+  useOutsideAlerter(wrapperRef, setHandleDropdown);
 
   return (
     <>
@@ -53,10 +55,11 @@ function Header() {
               <button
                 className={cx('dropdown')}
                 onClick={() => setHandleDropdown(!handleDropdown)}
+                ref={wrapperRef}
               >
                 <img src={UserIcon} alt="UserIcon" />
+                <DropdownLogin handleDropdown={handleDropdown} />
               </button>
-              <DropdownLogin handleDropdown={handleDropdown} />
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ type Props = {
 const cx = classNames.bind(styles);
 function DropdownLogin({ handleDropdown }: Props) {
   return (
-    <ul className={cx('inner', { show: handleDropdown })}>
+    <ul className={cx('inner', { show: !handleDropdown })}>
       <li>
         <img src={IconUser} alt="IconUser" />
         Manage My Account
