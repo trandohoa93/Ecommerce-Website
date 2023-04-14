@@ -4,12 +4,14 @@ import thunkMiddleware from 'redux-thunk';
 import categoriesReducer from '../Features/Product/getAllCategoriesSlice';
 import productReducer from '../Features/Product/getAllProductSlice';
 import singleProduct from '../Features/Product/getSingleProduct';
+import userLogin from '../Features/User/userLogin';
 
 export const store = configureStore({
   reducer: {
     product: productReducer,
     categories: categoriesReducer,
     singleProduct: singleProduct,
+    userLogin: userLogin,
   },
   middleware: [thunkMiddleware],
 });

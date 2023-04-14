@@ -44,6 +44,9 @@ button, input, [tabindex] {
     line-height: unset;
 }
 
+button {
+    cursor: pointer;
+}
 
 a[href] {
     color: var(--text2);
@@ -68,4 +71,8 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
 }

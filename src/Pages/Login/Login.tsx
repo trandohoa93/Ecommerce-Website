@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
 
 import SideImage from '../../Assets/Images/SideImage.svg';
-import SignUpForm from '../../Components/SignUpForm/SignUpForm';
-import styles from './SignUp.module.scss';
+import LoginForm from '../../Components/LoginForm/LoginForm';
+import styles from './Login.module.scss';
 const cx = classNames.bind(styles);
 
-function SignUp() {
+function Login() {
   return (
     <div className={cx('container')}>
       <div className={cx('inner')}>
@@ -13,11 +13,11 @@ function SignUp() {
           <img src={SideImage} alt="SideImage" />
         </div>
         <div className={cx('form')}>
-          <SignUpForm />
+          <LoginForm />
         </div>
       </div>
     </div>
   );
 }
 
-export default SignUp;
+export default Login;

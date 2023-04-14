@@ -1,6 +1,6 @@
 import Home from '../Pages/HomePage';
+import Login from '../Pages/Login';
 import ProductDetails from '../Pages/ProductsDetails';
-import SignUp from '../Pages/Sign Up';
 
 const publicRoutes = [
   {
@@ -8,8 +8,8 @@ const publicRoutes = [
     component: Home,
   },
   {
-    path: '/signup',
-    component: SignUp,
+    path: '/login',
+    component: Login,
   },
   {
     path: '/productdetails/:id',

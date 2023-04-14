@@ -2,7 +2,7 @@ export const LOCATION = {
   HOME: '/',
   CONTACT: '/contact',
   ABOUT: '/about',
-  SIGNUP: '/signup',
+  LOGIN: '/login',
 };
 
 export const NAV_LINK = [
@@ -19,9 +19,10 @@ export const NAV_LINK = [
     href: LOCATION.ABOUT,
   },
   {
-    label: 'Sign Up',
-    href: LOCATION.SIGNUP,
+    label: 'Login',
+    href: LOCATION.LOGIN,
   },
 ];
 
 export const BASE_URL = 'https://fakestoreapi.com';
+export const LOGIN_URL = 'https://fakestoreapi.com/auth/login';

@@ -22,15 +22,16 @@ function ProductDetails() {
   const loading = useSelector((state: RootState) => state.singleProduct.loading);
   const [value, setValue] = useState(1);
 
-  const increaseValue = useCallback(() => {
-    setValue(value + 1);
-  }, [value]);
+  const increaseValue = useCallback(
+    (value) => () => {
+      setValue((prev) => {
+        const nextValue = prev + value;
 
-  const decreaseValue = useCallback(() => {
-    if (value > 1) {
-      setValue(value - 1);
-    }
-  }, [value]);
+        return nextValue ? nextValue : 1;
+      });
+    },
+    [],
+  );
 
   const handleChange = (e: any) => {
     setValue(e.target.value);
@@ -112,7 +113,7 @@ function ProductDetails() {
               </div>
               <div className={cx('form-button')} onSubmit={handleSubmit}>
                 <form className={cx('form')}>
-                  <button className={cx('decrease-button')} onClick={decreaseValue}>
+                  <button className={cx('decrease-button')} onClick={increaseValue(-1)}>
                     <img src={Minus} alt="Minus Icon" />
                   </button>
                   <input
@@ -122,7 +123,7 @@ function ProductDetails() {
                     value={value}
                     onChange={handleChange}
                   />
-                  <button className={cx('increase-button')} onClick={increaseValue}>
+                  <button className={cx('increase-button')} onClick={increaseValue(1)}>
                     <img src={Plus} alt="Plus Icon" />
                   </button>
                 </form>

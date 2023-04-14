@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 interface Props {
   children?: React.ReactNode;
-  onClick: () => void;
+  onClick: (e?: any) => void;
   color: 'secondary' | 'white';
   disabled?: boolean;
   className?: string;
@@ -24,7 +24,7 @@ function Button(props: Props) {
   });
 
   return (
-    <button className={cx(className)} onClick={onClick}>
+    <button className={cx(className)} onClick={onClick} type="button">
       <p>{children}</p>
     </button>
   );
