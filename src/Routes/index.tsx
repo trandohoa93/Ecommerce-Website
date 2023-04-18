@@ -1,6 +1,7 @@
 import About from '../Pages/About';
 import Account from '../Pages/Account';
 import Contact from '../Pages/Contact';
+import Error from '../Pages/Error';
 import Home from '../Pages/HomePage';
 import Login from '../Pages/Login';
 import ProductDetails from '../Pages/ProductsDetails';
@@ -29,6 +30,10 @@ const publicRoutes = [
   {
     path: '/about',
     component: About,
+  },
+  {
+    path: '*',
+    component: Error,
   },
 ];
 
