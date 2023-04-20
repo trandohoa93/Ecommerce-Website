@@ -6,18 +6,27 @@ const initialState: {
   loading: boolean;
   error: string | null;
   data: any;
+  isLogin: boolean;
 } = {
   loading: false,
   error: null,
   data: {
     token: '',
   },
+  isLogin: false,
 };
 
 export const userLoginSlice = createSlice({
   name: 'login',
   initialState,
-  reducers: {},
+  reducers: {
+    login: (state) => {
+      state.isLogin = true;
+    },
+    logout: (state) => {
+      state.isLogin = false;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(userLogin.pending, (state) => {
       state.loading = true;
@@ -40,5 +49,7 @@ export const userLoginSlice = createSlice({
     });
   },
 });
+
+export const { login, logout } = userLoginSlice.actions;
 
 export default userLoginSlice.reducer;

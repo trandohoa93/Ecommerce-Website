@@ -1,7 +1,10 @@
 import classNames from 'classnames/bind';
 import { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { RootState } from '../../App/store';
 import Cart from '../../Assets/Images/Cart.svg';
 import IconLogo from '../../Assets/Images/Logo.svg';
 import Search from '../../Assets/Images/Search.svg';
@@ -10,12 +13,25 @@ import Wishlist from '../../Assets/Images/Wishlist.svg';
 import DropdownLogin from '../../Components/DropdownLogin';
 import TopHeader from '../../Components/TopHeader';
 import { NAV_LINK } from '../../constants';
+import { login, logout } from '../../Features/User/userLogin';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
 function Header() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      dispatch(login());
+    } else {
+      dispatch(logout());
+    }
+  }, []);
+
+  const isLogin = useSelector((state: RootState) => state.userLogin.isLogin);
+
   const [handleDropdown, setHandleDropdown] = useState<boolean>(false);
   const wrapperRef = useRef(null);
 
@@ -37,6 +53,9 @@ function Header() {
                 </li>
               );
             })}
+            <li className={cx({ login: isLogin })}>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
           <div className={cx('search')}>
             <div className={cx('search-item')}>
@@ -53,7 +72,7 @@ function Header() {
                 <img src={Cart} alt="Cart" />
               </button>
               <button
-                className={cx('dropdown')}
+                className={cx({ dropdown: !isLogin })}
                 onClick={() => setHandleDropdown(!handleDropdown)}
                 ref={wrapperRef}
               >

@@ -1,11 +1,12 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { userLogin } from '../../Api/projectAPI';
 import { RootState } from '../../App/store';
+import { login, logout } from '../../Features/User/userLogin';
 import Button from '../Button';
 import styles from './LoginForm.module.scss';
 
@@ -18,20 +19,20 @@ function LoginForm() {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const submitForm = () => {
-    dispatch(userLogin({ username, password }));
-    console.log(data);
+  useEffect(() => {
     if (data.token) {
-      const expirationTime = new Date().getTime() + 60 * 60 * 1000; // timestamp của thời điểm token hết hạn (1 giờ sau thời điểm hiện tại)
+      const expirationTime = new Date().getTime() + 60 * 60 * 1000;
       localStorage.setItem('token', data.token);
       localStorage.setItem('expirationTime', expirationTime.toString());
+      dispatch(login());
       setTimeout(() => {
         localStorage.removeItem('token');
         localStorage.removeItem('expirationTime');
+        dispatch(logout());
       }, 60 * 60 * 1000);
       navigate('/');
     }
-  };
+  }, [data.token]);
 
   const setForm = () => {
     setUsername('mor_2314');
@@ -47,7 +48,7 @@ function LoginForm() {
       <div className={cx('form-body')}>
         <div className={cx('form-input')}>
           <input
-            placeholder="Name or Pone Number"
+            placeholder="Name or Phone Number"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -58,7 +59,10 @@ function LoginForm() {
           />
         </div>
         <div className={cx('form-button')}>
-          <Button color="secondary" onClick={() => submitForm()}>
+          <Button
+            color="secondary"
+            onClick={() => dispatch(userLogin({ username, password }))}
+          >
             Login
           </Button>
           <Button color="secondary" onClick={() => setForm()}>

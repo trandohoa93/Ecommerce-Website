@@ -8,7 +8,6 @@ export const LOCATION = {
   HOME: '/',
   CONTACT: '/contact',
   ABOUT: '/about',
-  LOGIN: '/login',
 };
 
 export const NAV_LINK = [
@@ -23,10 +22,6 @@ export const NAV_LINK = [
   {
     label: 'About',
     href: LOCATION.ABOUT,
-  },
-  {
-    label: 'Login',
-    href: LOCATION.LOGIN,
   },
 ];
 

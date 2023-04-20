@@ -31,6 +31,11 @@
         display: flex;
     
         list-style-type: none;
+
+        .login {
+            display: none;
+        }
+
         li {
             margin-right: 48px;
             font-weight: 400;
@@ -91,7 +96,12 @@
                 display: flex;
                 align-items: center;
             }
+
+            .dropdown {
+                display: none;
+            }
         }
     }
 }
+
 
