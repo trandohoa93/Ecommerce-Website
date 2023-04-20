@@ -1,0 +1,116 @@
+.wrapper {
+    padding-top: 80px;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding-bottom: 140px;
+}
+
+.roadtext {
+    display: flex;
+    justify-content: space-between;
+
+    .main {
+        font-size: 1.4rem;
+        opacity: 0.5;
+    }
+
+    .sub {
+        text-transform: capitalize;
+        font-size: 1.4rem;
+    }
+
+    .name {
+        color: var(--secondary2);
+    }
+}
+
+.content {
+    display: flex;
+    gap: 100px;
+}
+
+.user-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .item {
+        font-weight: 500;
+
+
+        ul {
+            margin-top: 16px;
+            cursor: pointer;
+        }
+
+        li {
+            font-weight: 400;
+            color: var(--text2);
+            opacity: 0.5;
+        }
+
+        li:hover {
+            color: var(--secondary2);
+            opacity: 1;
+        }   
+    }
+}
+
+form {
+    gap: 0px;
+}
+
+.info {
+    padding: 40px 80px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    
+    .title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 93%;
+        color: var(--secondary2);
+        margin-bottom: 16px;
+    }
+
+    .group-input {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .text-input {
+        margin-bottom: 8px;
+    }
+
+    input {
+        background-color: var(--secondary);
+        color: rgba(0, 0, 0, 0.5);
+        padding: 13px 16px;
+        border-radius: 4px;
+    }
+
+    .name, .contact {
+        display: flex;
+        gap: 50px;
+
+        input {
+            width: 330px;
+        }
+    }
+
+    .input-password {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px
+}
