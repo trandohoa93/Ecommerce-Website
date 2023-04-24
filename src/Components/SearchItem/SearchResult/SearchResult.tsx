@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 
-import Image from '../../../Assets/Images/apple-macbook-pro-2020-z11c-(57).jpg';
 import styles from './SearchResult.module.scss';
 
 interface Product {
@@ -18,15 +17,15 @@ interface Product {
 
 interface ProductsListProps {
   results: Array<Product>;
+  showSearchResult: any;
 }
 
 const cx = classNames.bind(styles);
 
-function SearchResult({ results }: ProductsListProps) {
-  console.log(results);
+function SearchResult({ results, showSearchResult }: ProductsListProps) {
   if (!results.length) return null;
   return (
-    <div className={cx('search-result')}>
+    <div className={cx('search-result', { show: showSearchResult })}>
       <ul className={cx('suggest_search')}>
         {results.map((item) => {
           return (

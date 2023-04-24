@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { RootState } from '../../App/store';
 import Cart from '../../Assets/Images/Cart.svg';
 import IconLogo from '../../Assets/Images/Logo.svg';
-import Search from '../../Assets/Images/Search.svg';
 import UserIcon from '../../Assets/Images/user.svg';
 import Wishlist from '../../Assets/Images/Wishlist.svg';
 import DropdownLogin from '../../Components/DropdownLogin';
