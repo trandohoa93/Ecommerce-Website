@@ -12,7 +12,7 @@ import Return from '../../Assets/Images/Icon-return.svg';
 import Loading from '../../Assets/Images/Loading.svg';
 import Button from '../../Components/Button';
 import Star from '../../Components/Star';
-import { ProductType } from '../../Features/Product/getSingleProduct';
+import { ProductType } from '../../Features/Product/getSingleProductSlice';
 import styles from './ProductDetails.module.scss';
 const cx = classNames.bind(styles);
 function ProductDetails() {

@@ -3,8 +3,8 @@ import thunkMiddleware from 'redux-thunk';
 
 import categoriesReducer from '../Features/Product/getAllCategoriesSlice';
 import productReducer from '../Features/Product/getAllProductSlice';
-import singleProduct from '../Features/Product/getSingleProduct';
-import userLogin from '../Features/User/userLogin';
+import singleProduct from '../Features/Product/getSingleProductSlice';
+import userLogin from '../Features/User/userLoginSlice';
 
 export const store = configureStore({
   reducer: {

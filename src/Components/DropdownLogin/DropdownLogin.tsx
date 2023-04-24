@@ -6,7 +6,7 @@ import IconLogout from '../../Assets/Images/Icon-logout.svg';
 import IconMallBag from '../../Assets/Images/icon-mallbag.svg';
 import IconReview from '../../Assets/Images/Icon-Reviews.svg';
 import IconUser from '../../Assets/Images/user (1).svg';
-import { logout } from '../../Features/User/userLogin';
+import { logout } from '../../Features/User/userLoginSlice';
 import styles from './DropdownLogin.module.scss';
 
 type Props = {
@@ -18,6 +18,8 @@ function DropdownLogin({ handleDropdown }: Props) {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('expirationTime');
     dispatch(logout());
   };
 

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { userLogin } from '../../Api/projectAPI';
 import { RootState } from '../../App/store';
-import { login, logout } from '../../Features/User/userLogin';
+import { login, logout } from '../../Features/User/userLoginSlice';
 import Button from '../Button';
 import styles from './LoginForm.module.scss';
 

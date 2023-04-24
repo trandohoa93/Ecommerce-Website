@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { stat } from 'fs';
 
 import { getAllProducts } from '../../Api/projectAPI.js';
 
@@ -19,16 +20,28 @@ const initialState: {
   loading: boolean;
   error: string | null;
   data: Product[];
+  searchItem: Product[];
 } = {
   loading: false,
   error: null,
   data: [],
+  searchItem: [],
 };
 
 export const getAllProductsSlice = createSlice({
   name: 'product',
   initialState,
-  reducers: {},
+  reducers: {
+    searchItem: (state, action) => {
+      if (action.payload)
+        state.searchItem = state.data.filter((item) => {
+          return item.title.toLowerCase().includes(action.payload);
+        });
+      else {
+        state.searchItem = [];
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getAllProducts.pending, (state) => {
       state.loading = true;
@@ -47,5 +60,7 @@ export const getAllProductsSlice = createSlice({
     });
   },
 });
+
+export const { searchItem } = getAllProductsSlice.actions;
 
 export default getAllProductsSlice.reducer;

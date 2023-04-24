@@ -11,9 +11,10 @@ import Search from '../../Assets/Images/Search.svg';
 import UserIcon from '../../Assets/Images/user.svg';
 import Wishlist from '../../Assets/Images/Wishlist.svg';
 import DropdownLogin from '../../Components/DropdownLogin';
+import SearchItem from '../../Components/SearchItem';
 import TopHeader from '../../Components/TopHeader';
 import { NAV_LINK } from '../../constants';
-import { login, logout } from '../../Features/User/userLogin';
+import { login, logout } from '../../Features/User/userLoginSlice';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 import styles from './Header.module.scss';
 
@@ -58,12 +59,7 @@ function Header() {
             </li>
           </ul>
           <div className={cx('search')}>
-            <div className={cx('search-item')}>
-              <input placeholder="What are you looking for?" />
-              <button className={cx('clear')}>
-                <img src={Search} alt="Search" />
-              </button>
-            </div>
+            <SearchItem />
             <div className={cx('button-item')}>
               <button>
                 <img src={Wishlist} alt="Wishlist" />
