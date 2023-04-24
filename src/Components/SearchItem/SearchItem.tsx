@@ -13,7 +13,9 @@ function SearchItem() {
   return (
     <div
       ref={wrapperRef}
-      onClick={() => setShowSearchResult(false)}
+      onClick={() => {
+        setShowSearchResult(false);
+      }}
       onKeyDown={() => console.log('hehe')}
       role="button"
       tabIndex={0}
