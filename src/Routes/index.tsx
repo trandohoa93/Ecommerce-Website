@@ -1,9 +1,11 @@
 import About from '../Pages/About';
 import Account from '../Pages/Account';
+import Cart from '../Pages/Cart';
 import Contact from '../Pages/Contact';
 import Error from '../Pages/Error';
 import Home from '../Pages/HomePage';
 import Login from '../Pages/Login';
+import Products from '../Pages/Products';
 import ProductDetails from '../Pages/ProductsDetails';
 
 const publicRoutes = [
@@ -20,6 +22,10 @@ const publicRoutes = [
     component: ProductDetails,
   },
   {
+    path: '/about',
+    component: About,
+  },
+  {
     path: '/account',
     component: Account,
   },
@@ -28,8 +34,12 @@ const publicRoutes = [
     component: Contact,
   },
   {
-    path: '/about',
-    component: About,
+    path: '/cart',
+    component: Cart,
+  },
+  {
+    path: '/products',
+    component: Products,
   },
   {
     path: '*',

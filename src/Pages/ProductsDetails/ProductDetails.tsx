@@ -84,14 +84,14 @@ function ProductDetails() {
             </div>
             <p className={cx('des')}>{description}</p>
             <div className={cx('choice')}>
-              <div className={cx('colors')}>
+              {/* <div className={cx('colors')}>
                 <p className={cx('text')}>Color:</p>
                 <div className={cx('group-button')}>
                   <button className={cx('blue')} />
                   <button className={cx('pink')} />
                 </div>
-              </div>
-              <div className={cx('size')}>
+              </div> */}
+              {/* <div className={cx('size')}>
                 <p className={cx('text')}>Size:</p>
                 <div className={cx('group-button')}>
                   <button>
@@ -110,7 +110,7 @@ function ProductDetails() {
                     <p>XL</p>
                   </button>
                 </div>
-              </div>
+              </div> */}
               <div className={cx('form-button')} onSubmit={handleSubmit}>
                 <form className={cx('form')}>
                   <button className={cx('decrease-button')} onClick={increaseValue(-1)}>

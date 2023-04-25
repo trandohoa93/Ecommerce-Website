@@ -13,7 +13,7 @@ function Error() {
           <span className={cx('main')}>
             Home <span>/ </span>
           </span>
-          <span className={cx('sub')}>Contact</span>
+          <span className={cx('sub')}>404 Error</span>
         </div>
         <div className={cx('container')}>
           <div className={cx('text')}>

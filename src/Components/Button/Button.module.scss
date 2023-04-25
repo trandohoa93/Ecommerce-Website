@@ -19,10 +19,14 @@
 
 .color-white {
     background-color: var(--primary);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+
+    p {
+        color: var(--text2) !important;
+    }
 }
 
 .padding-style1 {
     padding: 10px 48px !important;
 }
-
 
