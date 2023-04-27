@@ -15,8 +15,12 @@
 
 .color-secondary {
     background-color: var(--secondary2);
+    transition: box-shadow 0.16s ease;
 }
-
+.color-secondary:hover {
+    background: #e26969;
+    transition: none;
+}
 .color-white {
     background-color: var(--primary);
     border: 1px solid rgba(0, 0, 0, 0.4);
@@ -30,3 +34,10 @@
     padding: 10px 48px !important;
 }
 
+.padding-style2 {
+    padding: 10px 28px !important;
+
+    p {
+        font-size: 1rem !important;
+    }
+}

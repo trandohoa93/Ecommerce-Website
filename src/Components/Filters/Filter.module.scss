@@ -1,0 +1,46 @@
+.form-control {
+    margin-bottom: 1.25rem;
+
+    .form-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.search-input {
+    padding: 0.7rem 1.2rem;
+    background: var(--secondary);
+    border-radius: 4px;
+    border-color: transparent;
+}
+
+.search-input::placeholder {
+    text-transform: capitalize;
+}
+
+.form-control {
+    margin-bottom: 1.25rem;
+
+    h5 {
+    margin-bottom: 0.5rem;
+    }
+}
+.button {
+    display: block;
+    margin: 0.25em 0;
+    padding: 0.25rem 0;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    letter-spacing: var(--spacing);
+    cursor: pointer;
+}
+
+.active {
+    border-color: var(--clr-grey-5);
+}
+
+.price {
+    margin-bottom: 0.25rem;
+}

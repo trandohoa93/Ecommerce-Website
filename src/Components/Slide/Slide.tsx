@@ -13,17 +13,6 @@ import ImageSlide from '../../Assets/Images/Slide.svg';
 import styles from './Slide.module.scss';
 
 const cx = classNames.bind(styles);
-const category = [
-  "Woman's Fashion",
-  "Men's Fashion",
-  'Electronics',
-  'Home & Lifestyle',
-  'Medicin',
-  'Sports & Outdoor',
-  "Baby's & Toys",
-  'Groceries & Pets',
-  'Health & Beauty',
-];
 
 const settings = {
   dots: true,

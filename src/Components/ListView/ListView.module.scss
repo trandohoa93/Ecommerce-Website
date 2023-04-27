@@ -1,0 +1,39 @@
+.listview {
+    display: grid;
+    row-gap: 3rem;
+    img {
+            width: 100%;
+            display: block;
+            width: 300px;
+            height: 200px;
+            object-fit: contain;
+            mix-blend-mode: color-burn;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+        }
+    
+        .title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+    
+        .price {
+            font-weight: 500;
+            color: var(--secondary2);
+            margin-bottom: 0.75rem;
+        }
+    
+        .price, .title, .des {
+            max-width: 45em;
+            margin-bottom: 1rem;
+        }
+    
+        @media (min-width: 992px) {
+            article {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                column-gap: 2rem;
+                align-items: center;
+            }
+        }
+}

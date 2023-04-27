@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { stat } from 'fs';
 
 import { getAllProducts } from '../../Api/projectAPI.js';
 
@@ -16,16 +15,36 @@ interface Product {
   };
 }
 
+interface Filter {
+  text: string;
+  category: string;
+  min_price: number;
+  max_price: number;
+  price: number;
+}
+
 const initialState: {
   loading: boolean;
   error: string | null;
   data: Product[];
   searchItem: Product[];
+  grid_view: boolean;
+  sort: string;
+  filters: Filter;
 } = {
   loading: false,
   error: null,
   data: [],
   searchItem: [],
+  grid_view: true,
+  sort: 'price-lowest',
+  filters: {
+    text: '',
+    category: 'all',
+    min_price: 0,
+    max_price: 0,
+    price: 0,
+  },
 };
 
 export const getAllProductsSlice = createSlice({
@@ -40,6 +59,12 @@ export const getAllProductsSlice = createSlice({
       else {
         state.searchItem = [];
       }
+    },
+    setGridView: (state) => {
+      state.grid_view = true;
+    },
+    setListView: (state) => {
+      state.grid_view = false;
     },
   },
   extraReducers: (builder) => {
