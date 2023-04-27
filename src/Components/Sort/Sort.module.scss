@@ -34,23 +34,21 @@
         column-gap: 0.5rem;
     
         button {
-            border: 1px solid var(--clr-black);
-            color: var(--clr-black);
-            width: 1.5rem;
-            border-radius: var(--radius);
-            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            border: 1px solid black;
+            color: black;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
             display: flex;
             justify-content: center;
             cursor: pointer;
-    
-            svg {
-                font-size: 1rem;
-            }
         }
     
-        .active {
-            background: var(--clr-black);
-            color: var(--clr-white);
+        .grid_view {
+            background: black;
+            color: white;
         }
     }
     

@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { getAllProducts } from '../../Api/projectAPI';
 import { RootState } from '../../App/store';
@@ -13,7 +14,7 @@ const cx = classNames.bind(styles);
 
 function Section() {
   const dispatch = useDispatch<any>();
-  const data = useSelector((state: RootState) => state.product.data);
+  const data = useSelector((state: RootState) => state.product.all_products);
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -44,14 +45,16 @@ function Section() {
         })}
       </div>
       <div className={cx('button')}>
-        <Button
-          color="secondary"
-          onClick={() => {
-            console.log('heheh');
-          }}
-        >
-          View All Product
-        </Button>
+        <Link to="/products">
+          <Button
+            color="secondary"
+            onClick={() => {
+              console.log('heheh');
+            }}
+          >
+            View All Product
+          </Button>
+        </Link>
       </div>
     </div>
   );

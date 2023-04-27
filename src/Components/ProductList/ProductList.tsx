@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 const ProductList = () => {
   const dispatch = useDispatch<any>();
 
-  const products = useSelector((state: RootState) => state.product.data);
+  const products = useSelector((state: RootState) => state.product.filtered_products);
   const grid_view = useSelector((state: RootState) => state.product.grid_view);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const ProductList = () => {
   if (products.length < 1) {
     return <p>Sorry, no products matched your search...</p>;
   }
-  if (grid_view) {
+  if (!grid_view) {
     return <ListView products={products} />;
   }
   return <GridView products={products} />;

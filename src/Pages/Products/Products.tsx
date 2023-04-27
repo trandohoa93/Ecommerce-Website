@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Filter from '../../Components/Filters/Filter';
 import ProductList from '../../Components/ProductList';
@@ -8,6 +8,9 @@ import styles from './Products.module.scss';
 
 const cx = classNames.bind(styles);
 function Products() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={cx('wrapper')}>
       <div className={cx('roadtext')}>

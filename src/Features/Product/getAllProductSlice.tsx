@@ -26,7 +26,8 @@ interface Filter {
 const initialState: {
   loading: boolean;
   error: string | null;
-  data: Product[];
+  filtered_products: Product[];
+  all_products: Product[];
   searchItem: Product[];
   grid_view: boolean;
   sort: string;
@@ -34,7 +35,8 @@ const initialState: {
 } = {
   loading: false,
   error: null,
-  data: [],
+  filtered_products: [],
+  all_products: [],
   searchItem: [],
   grid_view: true,
   sort: 'price-lowest',
@@ -53,7 +55,7 @@ export const getAllProductsSlice = createSlice({
   reducers: {
     searchItem: (state, action) => {
       if (action.payload)
-        state.searchItem = state.data.filter((item) => {
+        state.searchItem = state.all_products.filter((item) => {
           return item.title.toLowerCase().includes(action.payload);
         });
       else {
@@ -66,26 +68,69 @@ export const getAllProductsSlice = createSlice({
     setListView: (state) => {
       state.grid_view = false;
     },
+    updateSort: (state, action) => {
+      state.sort = action.payload;
+    },
+    sortProduct: (state) => {
+      let tempProducts = [...state.filtered_products];
+      if (state.sort === 'price-lowest') {
+        tempProducts = tempProducts.sort((a, b) => a.price - b.price);
+      }
+      if (state.sort === 'price-highest') {
+        tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+      }
+      if (state.sort === 'name-a') {
+        tempProducts = tempProducts.sort((a, b) => {
+          const nameA = a.title.toUpperCase();
+          const nameB = b.title.toUpperCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0;
+        });
+      }
+      if (state.sort === 'name-z') {
+        tempProducts = tempProducts.sort((b, a) => {
+          const nameA = a.title.toUpperCase();
+          const nameB = b.title.toUpperCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0;
+        });
+      }
+      state.filtered_products = tempProducts;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getAllProducts.pending, (state) => {
       state.loading = true;
       state.error = null;
-      state.data = [];
+      state.all_products = [];
+      state.filtered_products = [];
     });
     builder.addCase(getAllProducts.fulfilled, (state, action) => {
       state.loading = false;
       state.error = null;
-      state.data = action.payload;
+      state.all_products = action.payload;
+      state.filtered_products = action.payload;
     });
     builder.addCase(getAllProducts.rejected, (state, action) => {
       state.loading = false;
       state.error = 'Đã xảy ra lỗi';
-      state.data = [];
+      state.all_products = [];
+      state.filtered_products = [];
     });
   },
 });
 
-export const { searchItem } = getAllProductsSlice.actions;
+export const { searchItem, setGridView, setListView, sortProduct, updateSort } =
+  getAllProductsSlice.actions;
 
 export default getAllProductsSlice.reducer;
