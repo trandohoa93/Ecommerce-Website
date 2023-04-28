@@ -16,6 +16,9 @@ const cx = classNames.bind(styles);
 const Sort = () => {
   const dispatch = useDispatch<any>();
 
+  const filtered_products = useSelector(
+    (state: RootState) => state.product.filtered_products,
+  );
   const grid_view = useSelector((state: RootState) => state.product.grid_view);
   const sort = useSelector((state: RootState) => state.product.sort);
   useEffect(() => {
@@ -50,7 +53,7 @@ const Sort = () => {
           <BsList />
         </button>
       </div>
-      <p>22 product found</p>
+      <p>{filtered_products.length} product found</p>
       <hr />
       <form>
         <select
