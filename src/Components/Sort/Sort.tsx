@@ -19,7 +19,6 @@ const Sort = () => {
   const grid_view = useSelector((state: RootState) => state.product.grid_view);
   const sort = useSelector((state: RootState) => state.product.sort);
   useEffect(() => {
-    // dispatch({ type: FILTER_PRODUCTS });
     dispatch(sortProduct());
   }, [sort]);
   const handleSetGridView = () => {
@@ -59,7 +58,7 @@ const Sort = () => {
           id="sort"
           className={cx('sort-input')}
           value={sort}
-          onChange={(e) => handleUpdateSort(e)}
+          onChange={handleUpdateSort}
         >
           <option value="price-lowest">price (lowest)</option>
           <option value="price-highest">price (highest)</option>

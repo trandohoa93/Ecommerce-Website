@@ -4,6 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getAllCategories } from '../../Api/projectAPI';
 import { RootState } from '../../App/store';
+import {
+  clearFilters,
+  filterProducts,
+  updateFilters,
+} from '../../Features/Product/getAllProductSlice';
 import Button from '../Button';
 import styles from './Filter.module.scss';
 
@@ -11,10 +16,33 @@ const cx = classNames.bind(styles);
 
 const Filter = () => {
   const categories = useSelector((state: RootState) => state.categories.data);
+  const filters = useSelector((state: RootState) => state.product.filters);
+  const min_price = useSelector((state: RootState) => state.product.filters.min_price);
+  const max_price = useSelector((state: RootState) => state.product.filters.max_price);
+  const price = useSelector((state: RootState) => state.product.filters.price);
+  const category = useSelector((state: RootState) => state.product.filters.category);
+
   const allCategories = ['all', ...categories];
 
   const dispatch = useDispatch<any>();
+  useEffect(() => {
+    dispatch(filterProducts());
+  }, [filters]);
 
+  const handleUpdateFilters = (e: any) => {
+    const name = e.target.name;
+    let value = e.target.value;
+    if (name === 'category') {
+      value = e.target.textContent;
+    }
+    if (name === 'price') {
+      value = Number(value);
+    }
+    dispatch(updateFilters({ name, value }));
+  };
+  const handleClearFilters = (e: any) => {
+    dispatch(clearFilters());
+  };
   useEffect(() => {
     dispatch(getAllCategories());
   }, []);
@@ -30,6 +58,8 @@ const Filter = () => {
               name="text"
               placeholder="search"
               className={cx('search-input')}
+              value={filters.text}
+              onChange={handleUpdateFilters}
             />
           </div>
           {/* Search Input*/}
@@ -40,9 +70,10 @@ const Filter = () => {
               return (
                 <button
                   key={index}
+                  onClick={handleUpdateFilters}
                   type="button"
                   name="category"
-                  className={cx('button')}
+                  className={cx('button', { active: category === c.toLowerCase() })}
                 >
                   {c}
                 </button>
@@ -53,20 +84,20 @@ const Filter = () => {
           {/* price */}
           <div className={cx('form-control')}>
             <div className={cx('form-title')}>Price</div>
-            {/* <p className="price">{formatPrice(price)}</p> */}
+            <p className="price">{price}$</p>
             <input
               type="range"
               name="price"
-              // onChange={updateFilters}
-              // max={max_price}
-              // min={min_price}
-              // value={price}
+              onChange={handleUpdateFilters}
+              max={max_price}
+              min={min_price}
+              value={price}
             />
           </div>
           {/* end of rice */}
           {/* shipping */}
         </form>
-        <Button color="secondary" onClick={() => console.log('hehe')}>
+        <Button color="secondary" onClick={handleClearFilters}>
           Clear Filter
         </Button>
       </div>

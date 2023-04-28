@@ -8,7 +8,7 @@ import Star from '../Star';
 
 interface Props {
   id: number;
-  category: string;
+  title: string;
   price: number;
   rating: {
     count: number;
@@ -16,7 +16,7 @@ interface Props {
   };
   image: string;
 }
-function CardItem({ category, price, rating, image, id }: Props) {
+function CardItem({ title, price, rating, image, id }: Props) {
   return (
     <Link to={`/productdetails/${id}`}>
       <div className={cx('inner')}>
@@ -25,7 +25,7 @@ function CardItem({ category, price, rating, image, id }: Props) {
         </div>
         <div className={cx('info-container')}>
           <div className={cx('title')}>
-            <p>{category}</p>
+            <p>{title}</p>
           </div>
           <div className={cx('des')}>
             <p className={cx('price')}>${price}</p>
