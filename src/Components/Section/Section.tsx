@@ -31,12 +31,12 @@ function Section() {
       </div>
       <div className={cx('item-container')}>
         {(data ?? []).slice(0, 8).map((item, index) => {
-          const { id, category, price, rating, image } = item;
+          const { id, title, price, rating, image } = item;
           return (
             <CardItem
               key={index}
               id={id}
-              category={category}
+              title={title}
               price={price}
               rating={rating}
               image={image}
