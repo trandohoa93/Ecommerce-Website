@@ -11,6 +11,10 @@
     padding-right: 16px;
     min-width: 200px;
 
+    button {
+        text-align: start;
+    }
+
     &-item {
         text-transform: capitalize;
         font-weight: 400;

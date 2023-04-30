@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import Button from '../../Components/Button';
 import styles from './Error.module.scss';
@@ -10,9 +11,9 @@ function Error() {
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('roadtext')}>
-          <span className={cx('main')}>
+          <Link className={cx('main')} to="/">
             Home <span>/ </span>
-          </span>
+          </Link>
           <span className={cx('sub')}>404 Error</span>
         </div>
         <div className={cx('container')}>

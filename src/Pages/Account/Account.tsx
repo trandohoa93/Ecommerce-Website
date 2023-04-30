@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import Button from '../../Components/Button';
 import styles from './Account.module.scss';
@@ -10,9 +11,9 @@ function Account() {
       <div className={cx('inner')}>
         <div className={cx('roadtext')}>
           <div>
-            <span className={cx('main')}>
+            <Link className={cx('main')} to="/">
               Home <span>/ </span>
-            </span>
+            </Link>
             <span className={cx('sub')}>Contact</span>
           </div>
           <div>

@@ -42,9 +42,11 @@ function Header() {
       <TopHeader />
       <header className={cx('wrapper')}>
         <div className={cx('inner')}>
-          <div className={cx('logo')}>
-            <img src={IconLogo} alt="Logo" />
-          </div>
+          <Link to="/">
+            <div className={cx('logo')}>
+              <img src={IconLogo} alt="Logo" />
+            </div>
+          </Link>
           <ul className={cx('nav-item')}>
             {NAV_LINK.map((link) => {
               return (
@@ -63,9 +65,11 @@ function Header() {
               <button>
                 <img src={Wishlist} alt="Wishlist" />
               </button>
-              <button>
-                <img src={Cart} alt="Cart" />
-              </button>
+              <Link to="cart">
+                <button>
+                  <img src={Cart} alt="Cart" />
+                </button>
+              </Link>
               <button
                 className={cx({ dropdown: !isLogin })}
                 onClick={() => setHandleDropdown(!handleDropdown)}

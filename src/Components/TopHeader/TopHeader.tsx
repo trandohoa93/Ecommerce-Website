@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import DropDrown from '../../Assets/Images/DropDown.svg';
 import styles from './TopHeader.module.scss';
@@ -12,7 +13,9 @@ function TopHeader() {
           <p className={cx('text-1')}>
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </p>
-          <p className={cx('text-2')}>ShopNow</p>
+          <Link className={cx('text-2')} to="/products">
+            ShopNow
+          </Link>
         </div>
         <div className={cx('dropdown')}>
           <p>English</p>

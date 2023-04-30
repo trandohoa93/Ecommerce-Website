@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import MailIcon from '../../Assets/Images/icons-mail.svg';
 import PhoneIcon from '../../Assets/Images/icons-phone.svg';
@@ -11,9 +12,9 @@ function Contact() {
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('roadtext')}>
-          <span className={cx('main')}>
+          <Link className={cx('main')} to="/">
             Home <span>/ </span>
-          </span>
+          </Link>
           <span className={cx('sub')}>Contact</span>
         </div>
         <div className={cx('container')}>

@@ -5,11 +5,13 @@ import 'slick-carousel/slick/slick-theme.css';
 import classNames from 'classnames/bind';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
 import { getAllCategories } from '../../Api/projectAPI';
 import { RootState } from '../../App/store';
 import ImageSlide from '../../Assets/Images/Slide.svg';
+// import { updateFilters } from '../../Features/Product/getAllProductSlice';
 import styles from './Slide.module.scss';
 
 const cx = classNames.bind(styles);
@@ -33,14 +35,24 @@ function Slide() {
     dispatch(getAllCategories());
   }, []);
 
+  // function handleClickCategory(item: string) {
+  //   return function (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  //     const category = 'some category';
+  //     dispatch(updateFilters({ category: category, item }));
+  //     console.log(`Đã click vào category ${item}`);
+  //   };
+  // }
+
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('category')}>
           {data.map((item) => (
-            <div className={cx('category-item')} key={item}>
-              {item}
-            </div>
+            <button key={item}>
+              <Link to="/products">
+                <div className={cx('category-item')}>{item}</div>
+              </Link>
+            </button>
           ))}
         </div>
         <div className={cx('slide')}>

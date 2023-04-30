@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
 import IconInstagram from '../../Assets/Images/icon-instagram (2).svg';
@@ -26,9 +27,9 @@ function About() {
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('roadtext')}>
-          <span className={cx('main')}>
+          <Link className={cx('main')} to="/">
             Home <span>/ </span>
-          </span>
+          </Link>
           <span className={cx('sub')}>About</span>
         </div>
         <div className={cx('section')}>

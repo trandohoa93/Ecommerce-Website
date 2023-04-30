@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import DropDownDown from '../../Assets/Images/Drop-Down-Small.svg';
 import DropDownUp from '../../Assets/Images/Drop-Up-Small.svg';
@@ -12,9 +13,9 @@ function Cart() {
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('roadtext')}>
-          <span className={cx('main')}>
+          <Link className={cx('main')} to="/">
             Home <span>/</span>
-          </span>
+          </Link>
           <span className={cx('sub')}>Cart</span>
         </div>
         <div className={cx('product')}>
