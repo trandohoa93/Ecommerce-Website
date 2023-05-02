@@ -1,6 +1,6 @@
-import StarHaft from '../../Assets/Images/HaflStar.svg';
-import StarFill from '../../Assets/Images/StarFill.svg';
-import StarNoFill from '../../Assets/Images/StarNoFill.svg';
+import StarHaft from '@/Assets/Images/HaflStar.svg';
+import StarFill from '@/Assets/Images/StarFill.svg';
+import StarNoFill from '@/Assets/Images/StarNoFill.svg';
 
 interface Props {
   stars: number;

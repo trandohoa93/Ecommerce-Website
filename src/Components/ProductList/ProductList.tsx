@@ -2,8 +2,9 @@ import classNames from 'classnames/bind';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getAllProducts } from '../../Api/projectAPI';
-import { RootState } from '../../App/store';
+import { getAllProducts } from '@/Api/projectAPI';
+import { RootState } from '@/App/store';
+
 import GridView from '../GridView';
 import ListView from '../ListView';
 import styles from './ProductList.module.scss';

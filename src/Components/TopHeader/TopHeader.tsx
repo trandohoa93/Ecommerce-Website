@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
-import DropDrown from '../../Assets/Images/DropDown.svg';
+// import DropDrown from '@/Assets/Images/DropDown.svg';
 import styles from './TopHeader.module.scss';
 
 const cx = classNames.bind(styles);

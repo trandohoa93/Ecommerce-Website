@@ -1,8 +1,8 @@
-import IMG1 from '../Assets/Images/Frame 874.svg';
-import IMG2 from '../Assets/Images/Frame 875.svg';
-import IMG3 from '../Assets/Images/Frame 876 (1).svg';
-import IconShopping from '../Assets/Images/icon_shop.svg';
-import IconShoppingBag from '../Assets/Images/Icon-Shopping bag.svg';
+import IMG1 from '@/Assets/Images/Frame 874.svg';
+import IMG2 from '@/Assets/Images/Frame 875.svg';
+import IMG3 from '@/Assets/Images/Frame 876 (1).svg';
+import IconShopping from '@/Assets/Images/icon_shop.svg';
+import IconShoppingBag from '@/Assets/Images/Icon-Shopping bag.svg';
 
 export const LOCATION = {
   HOME: '/',

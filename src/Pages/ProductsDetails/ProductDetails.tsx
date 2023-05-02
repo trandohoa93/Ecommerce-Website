@@ -3,17 +3,18 @@ import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 
-import { getSingleProduct } from '../../Api/projectAPI';
-import { RootState } from '../../App/store';
-import Delivery from '../../Assets/Images/icon-delivery.svg';
-import Minus from '../../Assets/Images/icon-minus.svg';
-import Plus from '../../Assets/Images/icon-plus.svg';
-import Return from '../../Assets/Images/Icon-return.svg';
-import Loading from '../../Assets/Images/Loading.svg';
-import Button from '../../Components/Button';
-import Star from '../../Components/Star';
-import CartSlice, { addToCart } from '../../Features/Cart/CartSlice';
-import { ProductType } from '../../Features/Product/getSingleProductSlice';
+import { getSingleProduct } from '@/Api/projectAPI';
+import { RootState } from '@/App/store';
+import Delivery from '@/Assets/Images/icon-delivery.svg';
+import Minus from '@/Assets/Images/icon-minus.svg';
+import Plus from '@/Assets/Images/icon-plus.svg';
+import Return from '@/Assets/Images/Icon-return.svg';
+import Loading from '@/Assets/Images/Loading.svg';
+import Button from '@/Components/Button';
+import Star from '@/Components/Star';
+import CartSlice, { addToCart } from '@/Features/Cart/CartSlice';
+import { ProductType } from '@/Features/Product/getSingleProductSlice';
+
 import styles from './ProductDetails.module.scss';
 const cx = classNames.bind(styles);
 function ProductDetails() {

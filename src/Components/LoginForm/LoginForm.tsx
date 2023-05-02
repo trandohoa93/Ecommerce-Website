@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { userLogin } from '../../Api/projectAPI';
-import { RootState } from '../../App/store';
-import { login, logout } from '../../Features/User/userLoginSlice';
+import { userLogin } from '@/Api/projectAPI';
+import { RootState } from '@/App/store';
+import { login, logout } from '@/Features/User/userLoginSlice';
+
 import Button from '../Button';
 import styles from './LoginForm.module.scss';
 

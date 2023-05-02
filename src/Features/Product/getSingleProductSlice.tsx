@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getSingleProduct } from '../../Api/projectAPI';
+import { getSingleProduct } from '@/Api/projectAPI';
 
 export interface ProductType {
   id: number;

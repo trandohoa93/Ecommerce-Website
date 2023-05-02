@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getAllProducts } from '../../Api/projectAPI';
-import { RootState } from '../../App/store';
-import Icon from '../../Assets/Images/SectionIcon.svg';
+import { getAllProducts } from '@/Api/projectAPI';
+import { RootState } from '@/App/store';
+import Icon from '@/Assets/Images/SectionIcon.svg';
+
 import Button from '../Button';
 import CardItem from '../CardItem';
 import styles from './Section.module.scss';

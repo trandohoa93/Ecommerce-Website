@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
 import { useEffect } from 'react';
 
-import SideImage from '../../Assets/Images/SideImage.svg';
-import LoginForm from '../../Components/LoginForm/LoginForm';
+import SideImage from '@/Assets/Images/SideImage.svg';
+import LoginForm from '@/Components/LoginForm/LoginForm';
+
 import styles from './Login.module.scss';
 const cx = classNames.bind(styles);
 

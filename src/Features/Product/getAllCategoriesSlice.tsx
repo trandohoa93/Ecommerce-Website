@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getAllCategories } from '../../Api/projectAPI';
+import { getAllCategories } from '@/Api/projectAPI';
 
 const initialState: {
   loading: boolean;

@@ -4,18 +4,19 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { RootState } from '../../App/store';
-import Cart from '../../Assets/Images/Cart.svg';
-import IconLogo from '../../Assets/Images/Logo.svg';
-import UserIcon from '../../Assets/Images/user.svg';
-import Wishlist from '../../Assets/Images/Wishlist.svg';
-import DropdownLogin from '../../Components/DropdownLogin';
-import SearchItem from '../../Components/SearchItem';
-import TopHeader from '../../Components/TopHeader';
-import { NAV_LINK } from '../../constants';
-import { login, logout } from '../../Features/User/userLoginSlice';
-import useOutsideAlerter from '../../hooks/useOutsideAlerter';
-import { formatPrice } from '../../Utils/helpers';
+import { RootState } from '@/App/store';
+import Cart from '@/Assets/Images/Cart.svg';
+import IconLogo from '@/Assets/Images/Logo.svg';
+import UserIcon from '@/Assets/Images/user.svg';
+import Wishlist from '@/Assets/Images/Wishlist.svg';
+import DropdownLogin from '@/Components/DropdownLogin';
+import SearchItem from '@/Components/SearchItem';
+import TopHeader from '@/Components/TopHeader';
+import { NAV_LINK } from '@/constants';
+import { login, logout } from '@/Features/User/userLoginSlice';
+import useOutsideAlerter from '@/hooks/useOutsideAlerter';
+import { formatPrice } from '@/Utils/helpers';
+
 import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 

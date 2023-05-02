@@ -1,1 +1,1 @@
-import Login from '../../Pages/Login';
+import Login from '@/Pages/Login';

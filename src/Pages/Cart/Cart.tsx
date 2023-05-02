@@ -6,17 +6,18 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { RootState } from '../../App/store';
-import DropDownDown from '../../Assets/Images/Drop-Down-Small.svg';
-import DropDownUp from '../../Assets/Images/Drop-Up-Small.svg';
-import Button from '../../Components/Button';
+import { RootState } from '@/App/store';
+import DropDownDown from '@/Assets/Images/Drop-Down-Small.svg';
+import DropDownUp from '@/Assets/Images/Drop-Up-Small.svg';
+import Button from '@/Components/Button';
 import {
   clearCart,
   countCartTotals,
   removeCart,
   toggleCartItemAmount,
-} from '../../Features/Cart/CartSlice';
-import { formatPrice } from '../../Utils/helpers';
+} from '@/Features/Cart/CartSlice';
+import { formatPrice } from '@/Utils/helpers';
+
 import styles from './Cart.module.scss';
 
 const cx = classNames.bind(styles);

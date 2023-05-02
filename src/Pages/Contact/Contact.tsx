@@ -2,9 +2,10 @@ import classNames from 'classnames/bind';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import MailIcon from '../../Assets/Images/icons-mail.svg';
-import PhoneIcon from '../../Assets/Images/icons-phone.svg';
-import Button from '../../Components/Button';
+import MailIcon from '@/Assets/Images/icons-mail.svg';
+import PhoneIcon from '@/Assets/Images/icons-phone.svg';
+import Button from '@/Components/Button';
+
 import styles from './Contact.module.scss';
 
 const cx = classNames.bind(styles);

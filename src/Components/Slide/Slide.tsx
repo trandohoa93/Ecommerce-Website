@@ -8,10 +8,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
-import { getAllCategories } from '../../Api/projectAPI';
-import { RootState } from '../../App/store';
-import ImageSlide from '../../Assets/Images/Slide.svg';
-// import { updateFilters } from '../../Features/Product/getAllProductSlice';
+import { getAllCategories } from '@/Api/projectAPI';
+import { RootState } from '@/App/store';
+import ImageSlide from '@/Assets/Images/Slide.svg';
+
+// import { updateFilters } from '@/Features/Product/getAllProductSlice';
 import styles from './Slide.module.scss';
 
 const cx = classNames.bind(styles);

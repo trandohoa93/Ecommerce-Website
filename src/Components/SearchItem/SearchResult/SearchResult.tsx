@@ -2,7 +2,8 @@ import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { searchItem } from '../../../Features/Product/getAllProductSlice';
+import { searchItem } from '@/Features/Product/getAllProductSlice';
+
 import styles from './SearchResult.module.scss';
 
 interface Product {
