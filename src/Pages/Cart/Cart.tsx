@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
 import { useEffect } from 'react';
+import { IconContext } from 'react-icons';
+import { MdCancel } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -11,6 +13,7 @@ import Button from '../../Components/Button';
 import {
   clearCart,
   countCartTotals,
+  removeCart,
   toggleCartItemAmount,
 } from '../../Features/Cart/CartSlice';
 import { formatPrice } from '../../Utils/helpers';
@@ -21,6 +24,7 @@ function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cartSlice.cart);
   const total_amount = useSelector((state: RootState) => state.cartSlice.total_amount);
+  const token = localStorage.getItem('token');
   useEffect(() => {
     dispatch(countCartTotals());
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -37,6 +41,9 @@ function Cart() {
   };
   const clearCard = () => {
     dispatch(clearCart());
+  };
+  const handleRemoveCart = (id: any) => {
+    dispatch(removeCart(id));
   };
   return (
     <div className={cx('wrapper')}>
@@ -63,7 +70,16 @@ function Cart() {
                   <tr key={c.id}>
                     <td className={cx('name')}>
                       <img src={c.image} alt="Gamepad" />
-                      <p>{c.title.substring(0, 50)}</p>
+                      <button onClick={() => handleRemoveCart(c.id)}>
+                        <IconContext.Provider
+                          value={{ color: 'DB4444', className: 'cancel' }}
+                        >
+                          <div>
+                            <MdCancel />
+                          </div>
+                          <p>{c.title.substring(0, 50)}</p>
+                        </IconContext.Provider>
+                      </button>
                     </td>
                     <td>{c.price}</td>
                     <td className={cx('input')}>
@@ -123,9 +139,17 @@ function Cart() {
               <p className={cx('price')}>{formatPrice(total_amount)}</p>
             </div>
             <div className={cx('checkout')}>
-              <Button color="secondary" onClick={() => console.log('hehe')}>
-                Process to checkout
-              </Button>
+              {token ? (
+                <Link to="/login">
+                  <Button color="secondary" onClick={() => console.log('hehe')}>
+                    Login
+                  </Button>
+                </Link>
+              ) : (
+                <Button color="secondary" onClick={() => console.log('hehe')}>
+                  Process to checkout
+                </Button>
+              )}
             </div>
           </div>
         </div>

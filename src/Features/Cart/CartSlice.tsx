@@ -72,10 +72,10 @@ export const CartSlice = createSlice({
         return item;
       });
     },
-    // removeCart: (state, action) => {
-    //   const tempCart = state.cart.filter((item) => item.id !== action.payload);
-    //   state.cart = tempCart;
-    // },
+    removeCart: (state, action) => {
+      const tempCart = state.cart.filter((item) => item.id !== action.payload);
+      state.cart = tempCart;
+    },
     clearCart: (state) => {
       state.cart = [];
     },
@@ -99,7 +99,7 @@ export const CartSlice = createSlice({
   },
 });
 
-export const { addToCart, countCartTotals, toggleCartItemAmount, clearCart } =
+export const { addToCart, countCartTotals, toggleCartItemAmount, clearCart, removeCart } =
   CartSlice.actions;
 
 export default CartSlice.reducer;
