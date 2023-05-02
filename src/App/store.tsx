@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import thunkMiddleware from 'redux-thunk';
 
-import cartSliceReducer from '../Features/Cart/CartSlice';
-import categoriesReducer from '../Features/Product/getAllCategoriesSlice';
-import productReducer from '../Features/Product/getAllProductSlice';
-import singleProduct from '../Features/Product/getSingleProductSlice';
-import userLogin from '../Features/User/userLoginSlice';
+import cartSliceReducer from '@/Features/Cart/CartSlice';
+import categoriesReducer from '@/Features/Product/getAllCategoriesSlice';
+import productReducer from '@/Features/Product/getAllProductSlice';
+import singleProduct from '@/Features/Product/getSingleProductSlice';
+import userLogin from '@/Features/User/userLoginSlice';
 
 export const store = configureStore({
   reducer: {

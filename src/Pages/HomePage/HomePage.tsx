@@ -1,10 +1,11 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 
-import Loading from '../../Assets/Images/Loading.svg';
-import Section from '../../Components/Section';
-import ServiceCard from '../../Components/ServiceCard/ServiceCard';
-import Slide from '../../Components/Slide';
+import Loading from '@/Assets/Images/Loading.svg';
+import Section from '@/Components/Section';
+import ServiceCard from '@/Components/ServiceCard/ServiceCard';
+import Slide from '@/Components/Slide';
+
 import styles from './HomePage.module.scss';
 
 const cx = classNames.bind(styles);

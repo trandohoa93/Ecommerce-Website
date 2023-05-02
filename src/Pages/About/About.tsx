@@ -3,14 +3,15 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
-import IconInstagram from '../../Assets/Images/icon-instagram (2).svg';
-import IconLinkedin from '../../Assets/Images/Icon-Linkedin (2).svg';
-import IconTwitter from '../../Assets/Images/Icon-Twitter (2).svg';
-import SlideImage from '../../Assets/Images/Side Image (1).svg';
-import AboutCard from '../../Components/AboutCard';
-import ServiceCard from '../../Components/ServiceCard';
-import { ABOUT_CARD } from '../../constants';
-import { OWNER } from '../../constants';
+import IconInstagram from '@/Assets/Images/icon-instagram (2).svg';
+import IconLinkedin from '@/Assets/Images/Icon-Linkedin (2).svg';
+import IconTwitter from '@/Assets/Images/Icon-Twitter (2).svg';
+import SlideImage from '@/Assets/Images/Side Image (1).svg';
+import AboutCard from '@/Components/AboutCard';
+import ServiceCard from '@/Components/ServiceCard';
+import { ABOUT_CARD } from '@/constants';
+import { OWNER } from '@/constants';
+
 import styles from './About.module.scss';
 
 const cx = classNames.bind(styles);

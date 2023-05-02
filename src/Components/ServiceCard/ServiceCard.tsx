@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
 
-import Customer from './../../Assets/Images/Customer.svg';
-import Delyvery from './../../Assets/Images/Delivery.svg';
-import MoneyBack from './../../Assets/Images/MoneyBack.svg';
+import Customer from '@/Assets/Images/Customer.svg';
+import Delyvery from '@/Assets/Images/Delivery.svg';
+import MoneyBack from '@/Assets/Images/MoneyBack.svg';
+
 import styles from './ServiceCard.module.scss';
 
 const cx = classNames.bind(styles);

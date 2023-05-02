@@ -2,9 +2,10 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { RootState } from '../../../App/store';
-import Search from '../../../Assets/Images/Search.svg';
-import { searchItem } from '../../../Features/Product/getAllProductSlice';
+import { RootState } from '@/App/store';
+import Search from '@/Assets/Images/Search.svg';
+import { searchItem } from '@/Features/Product/getAllProductSlice';
+
 import styles from './SearchInput.module.scss';
 
 const cx = classNames.bind(styles);

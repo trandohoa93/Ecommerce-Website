@@ -4,13 +4,14 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { getAllCategories } from '../../Api/projectAPI';
-import { RootState } from '../../App/store';
+import { getAllCategories } from '@/Api/projectAPI';
+import { RootState } from '@/App/store';
 import {
   clearFilters,
   filterProducts,
   updateFilters,
-} from '../../Features/Product/getAllProductSlice';
+} from '@/Features/Product/getAllProductSlice';
+
 import Button from '../Button';
 import styles from './Filter.module.scss';
 

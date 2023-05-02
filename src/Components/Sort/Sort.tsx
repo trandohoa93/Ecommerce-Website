@@ -3,13 +3,14 @@ import { useEffect } from 'react';
 import { BsFillGridFill, BsList } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { RootState } from '../../App/store';
+import { RootState } from '@/App/store';
 import {
   setGridView,
   setListView,
   sortProduct,
   updateSort,
-} from '../../Features/Product/getAllProductSlice';
+} from '@/Features/Product/getAllProductSlice';
+
 import styles from './Sort.module.scss';
 const cx = classNames.bind(styles);
 

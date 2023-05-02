@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { userLogin } from '../../Api/projectAPI';
+import { userLogin } from '@/Api/projectAPI';
 
 const initialState: {
   loading: boolean;

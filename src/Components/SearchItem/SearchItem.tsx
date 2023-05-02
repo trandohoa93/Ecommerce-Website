@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
-import useOutsideSearch from '../../hooks/useOutsideSearch';
+import useOutsideSearch from '@/hooks/useOutsideSearch';
+
 import SearchInput from './SearchInput/SearchInput';
 import SearchResult from './SearchResult/SearchResult';
 

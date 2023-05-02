@@ -1,15 +1,16 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
-import AppStore from '../../Assets/Images/AppStore.svg';
-import GooglePlay from '../../Assets/Images/GooglePlay.svg';
-import IconFacebook from '../../Assets/Images/Icon-Facebook.svg';
-import IconInstagram from '../../Assets/Images/icon-instagram.svg';
-import IconLinedin from '../../Assets/Images/Icon-Linkedin.svg';
-import Send from '../../Assets/Images/icon-send.svg';
-import IconTwitter from '../../Assets/Images/Icon-Twitter.svg';
-import Logo from '../../Assets/Images/Logo-white.svg';
-import QrCode from '../../Assets/Images/Qr Code.svg';
+import AppStore from '@/Assets/Images/AppStore.svg';
+import GooglePlay from '@/Assets/Images/GooglePlay.svg';
+import IconFacebook from '@/Assets/Images/Icon-Facebook.svg';
+import IconInstagram from '@/Assets/Images/icon-instagram.svg';
+import IconLinedin from '@/Assets/Images/Icon-Linkedin.svg';
+import Send from '@/Assets/Images/icon-send.svg';
+import IconTwitter from '@/Assets/Images/Icon-Twitter.svg';
+import Logo from '@/Assets/Images/Logo-white.svg';
+import QrCode from '@/Assets/Images/Qr Code.svg';
+
 import styles from './Footer.module.scss';
 
 const cx = classNames.bind(styles);

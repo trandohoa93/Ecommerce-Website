@@ -2,9 +2,10 @@ import classNames from 'classnames/bind';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import Filter from '../../Components/Filters/Filter';
-import ProductList from '../../Components/ProductList';
-import Sort from '../../Components/Sort';
+import Filter from '@/Components/Filters/Filter';
+import ProductList from '@/Components/ProductList';
+import Sort from '@/Components/Sort';
+
 import styles from './Products.module.scss';
 
 const cx = classNames.bind(styles);
