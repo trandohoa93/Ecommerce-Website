@@ -25,6 +25,7 @@ export const userLoginSlice = createSlice({
     },
     logout: (state) => {
       state.isLogin = false;
+      state.data.token = '';
     },
   },
   extraReducers: (builder) => {

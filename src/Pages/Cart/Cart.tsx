@@ -26,6 +26,7 @@ function Cart() {
   const cart = useSelector((state: RootState) => state.cartSlice.cart);
   const total_amount = useSelector((state: RootState) => state.cartSlice.total_amount);
   const token = localStorage.getItem('token');
+
   useEffect(() => {
     dispatch(countCartTotals());
     localStorage.setItem('cart', JSON.stringify(cart));
