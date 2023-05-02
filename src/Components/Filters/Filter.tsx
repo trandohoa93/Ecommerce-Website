@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind';
+import queryString from 'query-string';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { getAllCategories } from '../../Api/projectAPI';
 import { RootState } from '../../App/store';
@@ -15,6 +17,9 @@ import styles from './Filter.module.scss';
 const cx = classNames.bind(styles);
 
 const Filter = () => {
+  const navigate = useNavigate();
+  const { category: locationCategory } = queryString.parse(location.search);
+
   const categories = useSelector((state: RootState) => state.categories.data);
   const filters = useSelector((state: RootState) => state.product.filters);
   const min_price = useSelector((state: RootState) => state.product.filters.min_price);
@@ -34,6 +39,7 @@ const Filter = () => {
     let value = e.target.value;
     if (name === 'category') {
       value = e.target.textContent;
+      navigate(`/products?category=${value}`);
     }
     if (name === 'price') {
       value = Number(value);
@@ -45,6 +51,11 @@ const Filter = () => {
   };
   useEffect(() => {
     dispatch(getAllCategories());
+  }, []);
+  useEffect(() => {
+    if (locationCategory) {
+      dispatch(updateFilters({ name: 'category', value: locationCategory }));
+    }
   }, []);
 
   return (
