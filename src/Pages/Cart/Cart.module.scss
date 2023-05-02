@@ -42,6 +42,11 @@ table {
     display: flex;
     align-items: center;
     gap: 20px;
+
+    img {
+        width: 54px;
+        height: 54px;
+    }
 }
 
 .value{
@@ -54,14 +59,15 @@ table {
 
 .input {
     position: relative;
+    width: 200px;
 
     .dropdown {
         display: flex;
         flex-direction: column;
 
         position: absolute;
-        top: 35px;
-        right: 160px;
+        top: 30px;
+        right: 90px;
     }
 }
 

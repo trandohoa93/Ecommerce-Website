@@ -58,12 +58,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
             gap: 16px;
             
             button {
                 display: flex;
                 align-items: center;
+            }
+
+            .cart-amount {
+                span {
+                    position: absolute;
+                    top: 0px;
+                    left: 70px;
+                    width: 16px;
+                    height: 16px;
+                    background-color: var(--secondary2);
+                    border-radius: 50%;
+                    font-size: 12px;
+                    color: white;
+                }
             }
 
             .dropdown {

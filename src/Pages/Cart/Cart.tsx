@@ -1,14 +1,39 @@
 import classNames from 'classnames/bind';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { RootState } from '../../App/store';
 import DropDownDown from '../../Assets/Images/Drop-Down-Small.svg';
 import DropDownUp from '../../Assets/Images/Drop-Up-Small.svg';
-import Gamepad from '../../Assets/Images/Gamepad-Cart-Small.svg';
 import Button from '../../Components/Button';
+import {
+  clearCart,
+  countCartTotals,
+  toggleCartItemAmount,
+} from '../../Features/Cart/CartSlice';
+import { formatPrice } from '../../Utils/helpers';
 import styles from './Cart.module.scss';
 
 const cx = classNames.bind(styles);
 function Cart() {
+  const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cartSlice.cart);
+  const total_amount = useSelector((state: RootState) => state.cartSlice.total_amount);
+  useEffect(() => {
+    dispatch(countCartTotals());
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+  const increase = (id: any) => {
+    dispatch(toggleCartItemAmount({ id, value: 'inc' }));
+  };
+  const decrease = (id: any) => {
+    dispatch(toggleCartItemAmount({ id, value: 'dec' }));
+  };
+  const clearCard = () => {
+    dispatch(clearCart());
+  };
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
@@ -29,21 +54,30 @@ function Cart() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className={cx('name')}>
-                  <img src={Gamepad} alt="Gamepad" />
-                  <p>H1 Gamepad</p>
-                </td>
-                <td>450</td>
-                <td className={cx('input')}>
-                  <input type="number" defaultValue={1} className={cx('value')} />
-                  <button className={cx('dropdown')}>
-                    <img src={DropDownUp} alt="DropDown" />
-                    <img src={DropDownDown} alt="DropDown" />
-                  </button>
-                </td>
-                <td>$650</td>
-              </tr>
+              {cart.map((c) => {
+                return (
+                  <tr key={c.id}>
+                    <td className={cx('name')}>
+                      <img src={c.image} alt="Gamepad" />
+                      <p>{c.title.substring(0, 50)}</p>
+                    </td>
+                    <td>{c.price}</td>
+                    <td className={cx('input')}>
+                      <input type="number" value={c.amount} className={cx('value')} />
+                      <button className={cx('dropdown')}>
+                        <button onClick={() => increase(c.id)}>
+                          <img src={DropDownUp} alt="DropDown" />
+                        </button>
+                        <button onClick={() => decrease(c.id)}>
+                          <img src={DropDownDown} alt="DropDown" />
+                        </button>
+                      </button>
+                    </td>
+                    <td>{formatPrice(c.price * c.amount)}</td>
+                  </tr>
+                );
+              })}
+
               {/* <tr>
                 <td className={cx('name')}>
                   <img src={LCDmonitor} alt="LCDmonitor" />
@@ -58,11 +92,13 @@ function Cart() {
             </tbody>
           </table>
           <div className={cx('button-cart')}>
-            <Button color="white" onClick={() => console.log('hehe')}>
-              Continue Shopping
-            </Button>
-            <Button color="white" onClick={() => console.log('hehe')}>
-              Update Card
+            <Link to="/products">
+              <Button color="white" onClick={() => console.log('hehe')}>
+                Continue Shopping
+              </Button>
+            </Link>
+            <Button color="white" onClick={() => clearCard()}>
+              Clear Shopping Cart
             </Button>
           </div>
           <div></div>
@@ -72,7 +108,7 @@ function Cart() {
             <p className={cx('cart-total')}>Cart Total</p>
             <div className={cx('total-item')}>
               <p className={cx('text')}>Subtotal:</p>
-              <p className={cx('price')}>$1750</p>
+              <p className={cx('price')}>{formatPrice(total_amount)}</p>
             </div>
             <div className={cx('total-item')}>
               <p className={cx('text')}>Shipping:</p>
@@ -80,7 +116,7 @@ function Cart() {
             </div>
             <div className={cx('total-item')}>
               <p className={cx('text')}>Total:</p>
-              <p className={cx('price')}>$1750</p>
+              <p className={cx('price')}>{formatPrice(total_amount)}</p>
             </div>
             <div className={cx('checkout')}>
               <Button color="secondary" onClick={() => console.log('hehe')}>

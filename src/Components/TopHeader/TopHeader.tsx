@@ -11,7 +11,8 @@ function TopHeader() {
       <div className={cx('inner')}>
         <div className={cx('text')}>
           <p className={cx('text-1')}>
-            Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+            Dive into Our Premium Swimwear Collection and Enjoy Free Express Delivery for
+            a Limited Time!
           </p>
           <Link className={cx('text-2')} to="/products">
             ShopNow

@@ -15,12 +15,14 @@ import TopHeader from '../../Components/TopHeader';
 import { NAV_LINK } from '../../constants';
 import { login, logout } from '../../Features/User/userLoginSlice';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
+import { formatPrice } from '../../Utils/helpers';
 import styles from './Header.module.scss';
-
 const cx = classNames.bind(styles);
 
 function Header() {
   const dispatch = useDispatch();
+
+  const total_item = useSelector((state: RootState) => state.cartSlice.total_items);
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
@@ -66,8 +68,9 @@ function Header() {
                 <img src={Wishlist} alt="Wishlist" />
               </button>
               <Link to="cart">
-                <button>
+                <button className={cx('cart-amount')}>
                   <img src={Cart} alt="Cart" />
+                  <span>{total_item}</span>
                 </button>
               </Link>
               <button

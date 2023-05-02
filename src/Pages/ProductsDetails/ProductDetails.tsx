@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { getSingleProduct } from '../../Api/projectAPI';
 import { RootState } from '../../App/store';
@@ -12,6 +12,7 @@ import Return from '../../Assets/Images/Icon-return.svg';
 import Loading from '../../Assets/Images/Loading.svg';
 import Button from '../../Components/Button';
 import Star from '../../Components/Star';
+import CartSlice, { addToCart } from '../../Features/Cart/CartSlice';
 import { ProductType } from '../../Features/Product/getSingleProductSlice';
 import styles from './ProductDetails.module.scss';
 const cx = classNames.bind(styles);
@@ -58,7 +59,9 @@ function ProductDetails() {
       </div>
     );
   }
-
+  const handleAddToCart = () => {
+    dispatch(addToCart({ id: id, amount: value, product: data }));
+  };
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
@@ -127,15 +130,17 @@ function ProductDetails() {
                     <img src={Plus} alt="Plus Icon" />
                   </button>
                 </form>
-                <Button
-                  color="secondary"
-                  padding="style1"
-                  onClick={() => {
-                    console.log('Buy Now');
-                  }}
-                >
-                  Buy Now
-                </Button>
+                <Link to="/cart">
+                  <Button
+                    color="secondary"
+                    padding="style1"
+                    onClick={() => {
+                      handleAddToCart();
+                    }}
+                  >
+                    Add To Cart
+                  </Button>
+                </Link>
               </div>
               <div className={cx('delivery')}>
                 <div className={cx('delivery-item', 'first-box')}>

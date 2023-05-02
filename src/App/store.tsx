@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import thunkMiddleware from 'redux-thunk';
 
+import cartSliceReducer from '../Features/Cart/CartSlice';
 import categoriesReducer from '../Features/Product/getAllCategoriesSlice';
 import productReducer from '../Features/Product/getAllProductSlice';
 import singleProduct from '../Features/Product/getSingleProductSlice';
@@ -12,6 +13,7 @@ export const store = configureStore({
     categories: categoriesReducer,
     singleProduct: singleProduct,
     userLogin: userLogin,
+    cartSlice: cartSliceReducer,
   },
   middleware: [thunkMiddleware],
 });
