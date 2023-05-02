@@ -25,8 +25,10 @@ function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cartSlice.cart);
   const total_amount = useSelector((state: RootState) => state.cartSlice.total_amount);
-  const token = localStorage.getItem('token');
 
+  const isLogin = useSelector((state: RootState) => state.userLogin.isLogin);
+
+  console.log(isLogin);
   useEffect(() => {
     dispatch(countCartTotals());
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -141,14 +143,18 @@ function Cart() {
               <p className={cx('price')}>{formatPrice(total_amount)}</p>
             </div>
             <div className={cx('checkout')}>
-              {token ? (
+              {!isLogin ? (
                 <Link to="/login">
                   <Button color="secondary" onClick={() => console.log('hehe')}>
                     Login
                   </Button>
                 </Link>
               ) : (
-                <Button color="secondary" onClick={() => console.log('hehe')}>
+                <Button
+                  color="secondary"
+                  onClick={() => console.log('hehe')}
+                  disabled={true}
+                >
                   Process to checkout
                 </Button>
               )}
