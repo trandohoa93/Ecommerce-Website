@@ -51,7 +51,7 @@ function Cart() {
   };
   return (
     <div className={cx('wrapper')}>
-      {total_amount > 0 ? (
+      {total_amount < 1 ? (
         <div className={cx('inner')}>
           <div className={cx('roadtext')}>
             <Link className={cx('main')} to="/">
