@@ -23,6 +23,11 @@
     flex-direction: column;
     gap: 24px;
     color: var(--text4);
+    cursor: pointer;
+
+    a[href] {
+        color: #fff !important;
+    }
 
     .logo {
         width: 118px;

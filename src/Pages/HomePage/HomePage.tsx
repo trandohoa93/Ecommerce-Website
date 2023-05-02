@@ -17,6 +17,10 @@ function Home() {
     }, 1000);
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (isLoading) {
     return (
       <div className={cx('loading')}>

@@ -25,6 +25,10 @@ function Cart() {
     dispatch(countCartTotals());
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const increase = (id: any) => {
     dispatch(toggleCartItemAmount({ id, value: 'inc' }));
   };

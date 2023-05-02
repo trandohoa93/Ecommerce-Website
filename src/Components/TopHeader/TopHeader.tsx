@@ -18,10 +18,10 @@ function TopHeader() {
             ShopNow
           </Link>
         </div>
-        <div className={cx('dropdown')}>
+        {/* <div className={cx('dropdown')}>
           <p>English</p>
           <img src={DropDrown} alt="dropdown" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

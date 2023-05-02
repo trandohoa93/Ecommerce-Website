@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from '../../Components/Button';
@@ -6,6 +7,9 @@ import styles from './Account.module.scss';
 
 const cx = classNames.bind(styles);
 function Account() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>

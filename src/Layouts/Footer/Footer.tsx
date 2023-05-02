@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import AppStore from '../../Assets/Images/AppStore.svg';
 import GooglePlay from '../../Assets/Images/GooglePlay.svg';
@@ -44,8 +45,18 @@ function Footer() {
             <p className={cx('text-title')}>Account</p>
             <div>
               <p className={cx('text-des')}>My Account</p>
-              <p className={cx('text-des')}>Login / Register</p>
-              <p className={cx('text-des')}>Cart</p>
+              <p className={cx('text-des')}>
+                <Link to="/login">
+                  <span>Login </span>
+                </Link>
+                <span> / </span>
+                <Link to="/login">
+                  <span>Register</span>
+                </Link>
+              </p>
+              <Link to="cart">
+                <p className={cx('text-des')}>Cart</p>
+              </Link>
               <p className={cx('text-des')}>Wishlist</p>
               <p className="shop-2hZ" id="I142:1522;128:1481">
                 Shop
@@ -55,10 +66,18 @@ function Footer() {
           <div className={cx('text')}>
             <p className={cx('text-title')}>Quick Link</p>
             <div>
-              <p className={cx('text-des')}>Privacy Policy</p>
-              <p className={cx('text-des')}>Terms Of Use</p>
-              <p className={cx('text-des')}>FAQ</p>
-              <p className={cx('text-des')}>Contact</p>
+              <Link to="contact">
+                <p className={cx('text-des')}>Privacy Policy</p>
+              </Link>
+              <Link to="contact">
+                <p className={cx('text-des')}>Terms Of Use</p>
+              </Link>
+              <Link to="contact">
+                <p className={cx('text-des')}>FAQ</p>
+              </Link>
+              <Link to="contact">
+                <p className={cx('text-des')}>Contact</p>
+              </Link>
             </div>
           </div>
           <div>
@@ -82,10 +101,18 @@ function Footer() {
               </div>
             </div>
             <div className={cx('social-icon')}>
-              <img src={IconFacebook} alt="Icon" />
-              <img src={IconTwitter} alt="Icon" />
-              <img src={IconInstagram} alt="Icon" />
-              <img src={IconLinedin} alt="Icon" />
+              <Link to="https://facebook.com" target="_blank">
+                <img src={IconFacebook} alt="Icon" />
+              </Link>
+              <Link to="https://twitter.com/home?lang=vi" target="_blank">
+                <img src={IconTwitter} alt="Icon" />
+              </Link>
+              <Link to="https://www.instagram.com/" target="_blank">
+                <img src={IconInstagram} alt="Icon" />
+              </Link>
+              <Link to="https://www.linkedin.com/" target="_blank">
+                <img src={IconLinedin} alt="Icon" />
+              </Link>
             </div>
           </div>
         </div>

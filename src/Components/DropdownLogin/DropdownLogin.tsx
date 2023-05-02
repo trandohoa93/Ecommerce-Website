@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import IconCancel from '../../Assets/Images/icon-cancel.svg';
 import IconLogout from '../../Assets/Images/Icon-logout.svg';
@@ -25,10 +26,12 @@ function DropdownLogin({ handleDropdown }: Props) {
 
   return (
     <ul className={cx('inner', { show: !handleDropdown })}>
-      <li>
-        <img src={IconUser} alt="IconUser" />
-        Manage My Account
-      </li>
+      <Link to="account">
+        <li>
+          <img src={IconUser} alt="IconUser" />
+          Manage My Account
+        </li>
+      </Link>
       <li>
         <img src={IconMallBag} alt="MallBag" />
         My Order

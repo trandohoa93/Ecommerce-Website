@@ -23,6 +23,9 @@ function ProductDetails() {
   const loading = useSelector((state: RootState) => state.singleProduct.loading);
   const [value, setValue] = useState(1);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const increaseValue = useCallback(
     (value) => () => {
       setValue((prev) => {

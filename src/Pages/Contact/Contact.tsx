@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import MailIcon from '../../Assets/Images/icons-mail.svg';
@@ -8,6 +9,9 @@ import styles from './Contact.module.scss';
 
 const cx = classNames.bind(styles);
 function Contact() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
