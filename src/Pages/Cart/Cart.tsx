@@ -51,58 +51,83 @@ function Cart() {
   };
   return (
     <div className={cx('wrapper')}>
-      <div className={cx('inner')}>
-        <div className={cx('roadtext')}>
-          <Link className={cx('main')} to="/">
-            Home <span>/</span>
-          </Link>
-          <span className={cx('sub')}>Cart</span>
+      {total_amount > 0 ? (
+        <div className={cx('inner')}>
+          <div className={cx('roadtext')}>
+            <Link className={cx('main')} to="/">
+              Home <span>/</span>
+            </Link>
+            <span className={cx('sub')}>Cart</span>
+          </div>
+          <div className={cx('container')}>
+            <div className={cx('text')}>
+              <p className={cx('title')}>Your cart is empty</p>
+            </div>
+            <Link to="/products">
+              <Button
+                color="secondary"
+                onClick={() => {
+                  console.log('hehe');
+                }}
+              >
+                FILL IT
+              </Button>
+            </Link>
+          </div>
         </div>
-        <div className={cx('product')}>
-          <table>
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.map((c) => {
-                return (
-                  <tr key={c.id}>
-                    <td className={cx('name')}>
-                      <img src={c.image} alt="Gamepad" />
-                      <button onClick={() => handleRemoveCart(c.id)}>
-                        <IconContext.Provider
-                          value={{ color: 'DB4444', className: 'cancel' }}
-                        >
-                          <div>
-                            <MdCancel />
-                          </div>
-                          <p>{c.title.substring(0, 50)}</p>
-                        </IconContext.Provider>
-                      </button>
-                    </td>
-                    <td>{c.price}</td>
-                    <td className={cx('input')}>
-                      <input type="number" value={c.amount} className={cx('value')} />
-                      <button className={cx('dropdown')}>
-                        <button onClick={() => increase(c.id)}>
-                          <img src={DropDownUp} alt="DropDown" />
+      ) : (
+        <div className={cx('inner')}>
+          <div className={cx('roadtext')}>
+            <Link className={cx('main')} to="/">
+              Home <span>/</span>
+            </Link>
+            <span className={cx('sub')}>Cart</span>
+          </div>
+          <div className={cx('product')}>
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cart.map((c) => {
+                  return (
+                    <tr key={c.id}>
+                      <td className={cx('name')}>
+                        <img src={c.image} alt="Gamepad" />
+                        <button onClick={() => handleRemoveCart(c.id)}>
+                          <IconContext.Provider
+                            value={{ color: 'DB4444', className: 'cancel' }}
+                          >
+                            <div>
+                              <MdCancel />
+                            </div>
+                            <p>{c.title.substring(0, 50)}</p>
+                          </IconContext.Provider>
                         </button>
-                        <button onClick={() => decrease(c.id)}>
-                          <img src={DropDownDown} alt="DropDown" />
+                      </td>
+                      <td>{c.price}</td>
+                      <td className={cx('input')}>
+                        <input type="number" value={c.amount} className={cx('value')} />
+                        <button className={cx('dropdown')}>
+                          <button onClick={() => increase(c.id)}>
+                            <img src={DropDownUp} alt="DropDown" />
+                          </button>
+                          <button onClick={() => decrease(c.id)}>
+                            <img src={DropDownDown} alt="DropDown" />
+                          </button>
                         </button>
-                      </button>
-                    </td>
-                    <td>{formatPrice(c.price * c.amount)}</td>
-                  </tr>
-                );
-              })}
+                      </td>
+                      <td>{formatPrice(c.price * c.amount)}</td>
+                    </tr>
+                  );
+                })}
 
-              {/* <tr>
+                {/* <tr>
                 <td className={cx('name')}>
                   <img src={LCDmonitor} alt="LCDmonitor" />
                   <p>LCD Monitor</p>
@@ -113,55 +138,56 @@ function Cart() {
                 </td>
                 <td>$1000</td>
               </tr> */}
-            </tbody>
-          </table>
-          <div className={cx('button-cart')}>
-            <Link to="/products">
-              <Button color="white" onClick={() => console.log('hehe')}>
-                Continue Shopping
-              </Button>
-            </Link>
-            <Button color="white" onClick={() => clearCard()}>
-              Clear Shopping Cart
-            </Button>
-          </div>
-          <div></div>
-        </div>
-        <div className={cx('box')}>
-          <div className={cx('total')}>
-            <p className={cx('cart-total')}>Cart Total</p>
-            <div className={cx('total-item')}>
-              <p className={cx('text')}>Subtotal:</p>
-              <p className={cx('price')}>{formatPrice(total_amount)}</p>
-            </div>
-            <div className={cx('total-item')}>
-              <p className={cx('text')}>Shipping:</p>
-              <p className={cx('price')}>Free</p>
-            </div>
-            <div className={cx('total-item')}>
-              <p className={cx('text')}>Total:</p>
-              <p className={cx('price')}>{formatPrice(total_amount)}</p>
-            </div>
-            <div className={cx('checkout')}>
-              {!isLogin ? (
-                <Link to="/login">
-                  <Button color="secondary" onClick={() => console.log('hehe')}>
-                    Login
-                  </Button>
-                </Link>
-              ) : (
-                <Button
-                  color="secondary"
-                  onClick={() => console.log('hehe')}
-                  disabled={true}
-                >
-                  Process to checkout
+              </tbody>
+            </table>
+            <div className={cx('button-cart')}>
+              <Link to="/products">
+                <Button color="white" onClick={() => console.log('hehe')}>
+                  Continue Shopping
                 </Button>
-              )}
+              </Link>
+              <Button color="white" onClick={() => clearCard()}>
+                Clear Shopping Cart
+              </Button>
+            </div>
+            <div></div>
+          </div>
+          <div className={cx('box')}>
+            <div className={cx('total')}>
+              <p className={cx('cart-total')}>Cart Total</p>
+              <div className={cx('total-item')}>
+                <p className={cx('text')}>Subtotal:</p>
+                <p className={cx('price')}>{formatPrice(total_amount)}</p>
+              </div>
+              <div className={cx('total-item')}>
+                <p className={cx('text')}>Shipping:</p>
+                <p className={cx('price')}>Free</p>
+              </div>
+              <div className={cx('total-item')}>
+                <p className={cx('text')}>Total:</p>
+                <p className={cx('price')}>{formatPrice(total_amount)}</p>
+              </div>
+              <div className={cx('checkout')}>
+                {!isLogin ? (
+                  <Link to="/login">
+                    <Button color="secondary" onClick={() => console.log('hehe')}>
+                      Login
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button
+                    color="secondary"
+                    onClick={() => console.log('hehe')}
+                    disabled={true}
+                  >
+                    Process to checkout
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
