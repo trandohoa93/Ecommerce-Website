@@ -49,7 +49,7 @@ function Slide() {
         <div className={cx('category')}>
           {data.map((item) => (
             <button key={item}>
-              <Link to="/products">
+              <Link to={`/products?category=${item}`}>
                 <div className={cx('category-item')}>{item}</div>
               </Link>
             </button>
