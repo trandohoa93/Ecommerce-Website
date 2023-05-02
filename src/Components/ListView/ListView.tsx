@@ -35,13 +35,15 @@ const ListView = ({ products }: Props) => {
               <p className={cx('title')}>{title}</p>
               <p className={cx('price')}>${price}</p>
               <p className={cx('des')}>{description.substring(0, 150)}...</p>
-              <Button
-                padding="style2"
-                color="secondary"
-                onClick={() => console.log('hehe')}
-              >
-                Details
-              </Button>
+              <Link to={`/productdetails/${id}`}>
+                <Button
+                  padding="style2"
+                  color="secondary"
+                  onClick={() => console.log('hehe')}
+                >
+                  Details
+                </Button>
+              </Link>
             </div>
           </article>
         );

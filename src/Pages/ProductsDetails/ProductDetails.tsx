@@ -69,12 +69,16 @@ function ProductDetails() {
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('roadtext')}>
-          <span className={cx('main')}>
-            Account <span>/ </span>
-          </span>
-          <span className={cx('main')}>
-            Gaming <span>/ </span>
-          </span>
+          <Link to="/">
+            <span className={cx('main')}>
+              Home<span>/ </span>
+            </span>
+          </Link>
+          <Link to="/products">
+            <span className={cx('main')}>
+              Products <span>/ </span>
+            </span>
+          </Link>
           <span className={cx('sub')}>{category}</span>
         </div>
         <div className={cx('item')}>
