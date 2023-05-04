@@ -106,9 +106,9 @@ function Cart() {
                             <div>
                               <MdCancel />
                             </div>
-                            <p>{c.title.substring(0, 50)}</p>
                           </IconContext.Provider>
                         </button>
+                        <p>{c.title.substring(0, 50)}</p>
                       </td>
                       <td>{c.price}</td>
                       <td className={cx('input')}>
