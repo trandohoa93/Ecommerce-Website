@@ -1,12 +1,13 @@
-import About from '../Pages/About';
-import Account from '../Pages/Account';
-import Cart from '../Pages/Cart';
-import Contact from '../Pages/Contact';
-import Error from '../Pages/Error';
-import Home from '../Pages/HomePage';
-import Login from '../Pages/Login';
-import Products from '../Pages/Products';
-import ProductDetails from '../Pages/ProductsDetails';
+import About from '@/Pages/About';
+import Account from '@/Pages/Account';
+import Cart from '@/Pages/Cart';
+import Checkout from '@/Pages/Checkout';
+import Contact from '@/Pages/Contact';
+import Error from '@/Pages/Error';
+import Home from '@/Pages/HomePage';
+import Login from '@/Pages/Login';
+import Products from '@/Pages/Products';
+import ProductDetails from '@/Pages/ProductsDetails';
 
 const publicRoutes = [
   {
@@ -40,6 +41,10 @@ const publicRoutes = [
   {
     path: '/products',
     component: Products,
+  },
+  {
+    path: 'checkout',
+    component: Checkout,
   },
   {
     path: '*',

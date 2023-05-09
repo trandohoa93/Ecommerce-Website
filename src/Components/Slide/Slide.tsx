@@ -10,7 +10,10 @@ import Slider from 'react-slick';
 
 import { getAllCategories } from '@/Api/projectAPI';
 import { RootState } from '@/App/store';
-import ImageSlide from '@/Assets/Images/Slide.svg';
+import ImageSlide1 from '@/Assets/Images/HOMEPAGE01.jpg';
+import ImageSlide2 from '@/Assets/Images/HOMEPAGE02.jpg';
+import ImageSlide3 from '@/Assets/Images/HOMEPAGE03.jpg';
+import ImageSlide4 from '@/Assets/Images/HOMEPAGE04.jpg';
 
 // import { updateFilters } from '@/Features/Product/getAllProductSlice';
 import styles from './Slide.module.scss';
@@ -58,21 +61,26 @@ function Slide() {
         </div>
         <div className={cx('slide')}>
           <Slider {...settings}>
-            <div>
-              <img src={ImageSlide} alt="Slide" />
-            </div>
-            <div>
-              <img src={ImageSlide} alt="Slide" />
-            </div>
-            <div>
-              <img src={ImageSlide} alt="Slide" />
-            </div>
-            <div>
-              <img src={ImageSlide} alt="Slide" />
-            </div>
-            <div>
-              <img src={ImageSlide} alt="Slide" />
-            </div>
+            <Link to="/products">
+              <div>
+                <img src={ImageSlide1} alt="Slide" className={cx('banner')} />
+              </div>
+            </Link>
+            <Link to="/products">
+              <div>
+                <img src={ImageSlide2} alt="Slide" className={cx('banner')} />
+              </div>
+            </Link>
+            <Link to="/products">
+              <div>
+                <img src={ImageSlide3} alt="Slide" className={cx('banner')} />
+              </div>
+            </Link>
+            <Link to="/products">
+              <div>
+                <img src={ImageSlide4} alt="Slide" className={cx('banner')} />
+              </div>
+            </Link>
           </Slider>
         </div>
       </div>

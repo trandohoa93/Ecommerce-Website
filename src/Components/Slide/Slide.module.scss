@@ -36,6 +36,12 @@
 .slide {
     padding-left: 45px;
     width: 892px;
-    height: 344px;
+    height: 400px;
+
+    .banner {
+        width: 892px;
+        height: 400px;
+        object-fit: cover;
+    }
 }
 
