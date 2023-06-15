@@ -1,61 +1,64 @@
 .wrapper {
-    padding-top: 80px;
+  padding-top: 80px;
 }
 
 .inner {
-    padding-bottom: 140px;
+  padding-bottom: 140px;
 }
 
 .roadtext {
-    .main {
-        font-size: 1.4rem;
-        opacity: 0.5;
-    }
+  .main {
+    font-size: 1.4rem;
+    opacity: 0.5;
+  }
 
-    .sub {
-        text-transform: capitalize;
-        font-size: 1.4rem;
-    }
+  .sub {
+    text-transform: capitalize;
+    font-size: 1.4rem;
+  }
 }
 
 .container {
-    
-    .billing-details {
-        width: 470px;
+  .billing-details {
+    width: 470px;
+
+    .box {
+      display: flex;
+
+      gap: 173px;
     }
-    .title {
-        margin-top: 80px;
-        margin-bottom: 48px;
-        font-size: 36px;
-        font-weight: 500;
-        line-height: 69%;
-    }
+  }
+  .title {
+    margin-top: 80px;
+    margin-bottom: 48px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 69%;
+  }
 
-    .info {
-
-        .text-input {
-            margin-bottom: 8px;
-            opacity: 0.4;
-        }
-        
-        input {
-            width: 470px;
-            background-color: var(--secondary);
-            color: rgba(0, 0, 0, 0.5);
-            padding: 13px 16px;
-            border-radius: 4px;
-        }
-
-        .checkbox {
-            display: flex;
-            gap: 16px;
-
-            input {
-                accent-color: var(--secondary2);
-                width: 24px;
-                height: 24px;
-            }
-        }
+  .info {
+    .text-input {
+      margin-bottom: 8px;
+      opacity: 0.4;
     }
 
+    input {
+      width: 470px;
+      background-color: var(--secondary);
+      color: rgba(0, 0, 0, 0.5);
+      padding: 13px 16px;
+      border-radius: 4px;
+    }
+
+    .checkbox {
+      display: flex;
+      gap: 16px;
+
+      input {
+        accent-color: var(--secondary2);
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
 }
