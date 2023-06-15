@@ -63,7 +63,11 @@ function LoginForm() {
             {...register('username', { required: true })}
           />
           {errors.username && <span>This field is required</span>}
-          <input placeholder="Password" {...register('password', { required: true })} />
+          <input
+            type="password"
+            placeholder="Password"
+            {...register('password', { required: true })}
+          />
           {errors.password && <span>This field is required</span>}
         </div>
         <div className={cx('form-button')}>

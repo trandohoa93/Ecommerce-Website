@@ -25,7 +25,45 @@ const Checkout = () => {
           <span className={cx('sub')}>CheckOut</span>
         </div>
         <div className={cx('container')}>
-          <div className={cx('billing details')}></div>
+          <div className={cx('billing-details')}>
+            <p className={cx('title')}>Billing Details</p>
+            <form className={cx('info')}>
+              <div>
+                <p className={cx('text-input')}>First Name</p>
+                <input />
+              </div>
+              <div>
+                <p className={cx('text-input')}>Company Name</p>
+                <input />
+              </div>
+              <div>
+                <p className={cx('text-input')}>Street Address</p>
+                <input />
+              </div>
+              <div>
+                <p className={cx('text-input')}>Apartment, floor, etc. (optional)</p>
+                <input />
+              </div>
+              <div>
+                <p className={cx('text-input')}>Town/City</p>
+                <input />
+              </div>
+              <div>
+                <p className={cx('text-input')}>Phone Number</p>
+                <input />
+              </div>
+              <div>
+                <p className={cx('text-input')}>Email Address</p>
+                <input />
+              </div>
+              <div className={cx('checkbox')}>
+                <input type="checkbox" id="info" name="info" value="info" />
+                <label htmlFor="info">
+                  Save this information for faster check-out next time
+                </label>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
